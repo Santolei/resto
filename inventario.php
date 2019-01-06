@@ -15,10 +15,13 @@
 	$result->execute();
 	$productos = $result->fetchAll();
 
+	// Traigo las categorías de la base de datos
+
+	$result2 = $con->PREPARE("SELECT nombre FROM categorias");
+	$result2->execute();
+	$categorias = $result2->fetchAll();
+
 	// -- Template del inventario -- //
 	require 'views/inventario.view.php';
-
-
-
 
  ?>

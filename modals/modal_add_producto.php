@@ -26,7 +26,13 @@
           </div>
           <div class="form-group">
             <label for="categoria">Categoría:</label>
-            <input class="form-control" type="text" name="categoria" id="categoria" autocomplete="off">
+            <select class="form-control" name="categoria" id="categoria" selected="Seleccionar Categoría" required>
+              <option value="">Seleccionar categoría</option>
+              <?php foreach ($categorias as $categoria): ?>
+                <option value="<?php echo $categoria['nombre'] ?>"><?php echo $categoria['nombre'] ?></option>
+              <?php endforeach ?>
+            </select>
+            <!-- <input class="form-control" type="text" name="categoria" id="categoria" autocomplete="off"> -->
           </div>
           <div class="form-group">
             <label for="stock">Stock:</label>

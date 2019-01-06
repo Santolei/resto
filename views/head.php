@@ -14,5 +14,7 @@
     <link href="public/css/mdb.min.css" rel="stylesheet">
     <!-- Estilos -->
     <link href="public/css/style.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shorcut icon" href="public/img/favicon.ico">
 </head>
 

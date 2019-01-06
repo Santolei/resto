@@ -14,7 +14,7 @@
         <a href="caja.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_caja)){echo $active_caja;}?>">
             <i class="fa fa-money mr-3"></i>Caja
         </a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_usuarios)){echo $active_usuarios;}?>">
+        <a href="usuarios.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_usuarios)){echo $active_usuarios;}?>">
             <i class="fa fa-user mr-3"></i>usuarios
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_pedidos)){echo $active_pedidos;}?>">

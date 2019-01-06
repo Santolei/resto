@@ -1,11 +1,13 @@
 /* VARIOS */
-
+.fa-2x {
+  font-size: 1.8em;
+}
 .titulo-seccion {
   font-weight: bold;
 }
 
 .navbar i {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .navbar a {
   color: #fafafa;
@@ -45,7 +47,7 @@
   animation-duration: .5s;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .navbar,
   .page-footer,
   main {
@@ -54,6 +56,9 @@
 @media screen and (max-width: 768px) {
   .sidebar-fixed {
     display: none;
+  }
+  .slideInLeft {
+    display: block;
   }
   main {padding: 0}
 }

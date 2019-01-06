@@ -4,17 +4,18 @@
 require '../config/config.php';
 require '../config/conexion.php';
 
-
 // --------------------------------- //
 // --------------------------------- //
 // Inserto el nuevo producto en la BD
+
+$nombre = $_POST['nombre_categoria'];
 
 if (!$con) {
 	echo 'Fallo la conexion';
 } else {
 	$statement = $con->prepare("
-		INSERT INTO categoria (nombre) 
-		VALUES($_POST['nombre'])
+		INSERT INTO categorias(nombre) 
+		VALUES('$nombre')
 		");
 
 	$statement->execute();

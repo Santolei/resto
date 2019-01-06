@@ -34,15 +34,16 @@
           $('#button-collapse-sidebar').on('click', function(){
             var sidebar = $('.sidebar-fixed');
             var main = $('#main');
+           
+           
 
             if ($(window).width() < 768) {
-               sidebar.show();
-               sidebar.addClass('slideInLeft');
+               sidebar.toggleClass('slideInLeft');
             }
-            else {
-               if (sidebar.hasClass('bounceOutLeft')) {
-                    sidebar.removeClass('bounceOutLeft').addClass('slideInLeft');
-                    main.removeClass('main').addClass('bounceOutLeft');
+            else if ($(window).width() >= 768){
+                if (sidebar.hasClass('bounceOutLeft')) {
+                sidebar.removeClass('bounceOutLeft').addClass('slideInLeft');
+                main.removeClass('main').addClass('bounceOutLeft');
                 } else if (sidebar.hasClass('slideInLeft')){
                     sidebar.removeClass('slideInLeft').addClass('bounceOutLeft');
                     main.addClass('main'); 

@@ -3,7 +3,7 @@
 require '../config/config.php';
 require '../config/conexion.php';
 
-$query = $con->prepare ('SELECT *  FROM productos');
+$query = $con->prepare ('SELECT * FROM productos');
 	$query->execute();
 $list = $query->fetchAll();
 foreach ($list as $productos) {

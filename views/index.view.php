@@ -20,7 +20,7 @@
         <div class="container-fluid mt-4 pt-2">
             <div class="row"><!--Grid row-->
                 <!--Grid column-->
-                <div class="col-12 col-md-8 mb-4">
+                <div class="col-12 col-lg-8 mb-4">
             
                     <!--Card-->
                     <div class="card">

@@ -35,7 +35,7 @@
 
                             <div class="d-flex flex-column flex-sm-row justify-content-center mb-2">
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_producto">Agregar producto</a>
-                                <a class="btn btn-primary">Agregar Categoría</a>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_categoria">Agregar Categoría</a>
                             </div>
                             <table style="width:100%" class="display table table-sm" id="tabla_productos">
                                 <thead class="stylish-color-dark white-text">
@@ -47,7 +47,7 @@
                                 </thead>
                                 <tbody></tbody>
                             </table>
-                            <?php include "modals/modal_edit_producto.php" ?>
+                            <!-- include "modals/modal_edit_producto.php" -->
                             <?php include "modals/modal_borrar_producto.php" ?>
                         </div>
             

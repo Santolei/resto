@@ -3,7 +3,7 @@
 
         <!-- Brand -->
         <a class="navbar-brand waves-effect" href="index.php" target="_blank">
-            <strong class="white-text">RESTO</strong>
+            <strong class="white-text"></strong>
         </a>
         <div class="float-right">
             <a href="#" data-activates="slide-out" id="button-collapse-sidebar" class="button-collapse"><i class="fa fa-bars"></i><span class="sr-only" aria-hidden="true">Mostrar menu</span></a>
