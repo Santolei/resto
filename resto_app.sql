@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-12-2018 a las 19:12:55
+-- Tiempo de generación: 07-01-2019 a las 11:20:33
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -31,6 +31,15 @@ CREATE TABLE `categorias` (
   `nombre` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_categoria`, `nombre`) VALUES
+(1, 'Comidas'),
+(3, 'Bebidas'),
+(4, 'Postres');
+
 -- --------------------------------------------------------
 
 --
@@ -46,7 +55,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`cantidad_mesas`) VALUES
-(12);
+(15);
 
 -- --------------------------------------------------------
 
@@ -65,8 +74,8 @@ CREATE TABLE `mesas` (
 --
 
 INSERT INTO `mesas` (`id_mesas`, `nro_mesa`, `estado`) VALUES
-(1, 1, 'Disponible'),
-(2, 2, 'Disponible'),
+(1, 1, 'Ocupada'),
+(2, 2, 'Ocupada'),
 (3, 3, 'Disponible'),
 (4, 4, 'Disponible'),
 (5, 5, 'Disponible'),
@@ -977,7 +986,32 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `categoria`, `stock`
 (848, 'Papas Fritas', 100, 'Comidas', 0),
 (849, 'Papas Fritas', 100, 'Comidas', 0),
 (850, 'Papas Fritas', 100, 'Comidas', 0),
-(851, 'Papas Fritas', 100, 'Comidas', 0);
+(851, 'Papas Fritas', 100, 'Comidas', 0),
+(852, 'Prueba del celu', 1500, 'Comidas', 12),
+(853, 'Arroz integral', 99, 'Comidas', 100),
+(854, 'Pasta Frola', 119, 'Postres', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `rol` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `rol`) VALUES
+(1, 'Administrador'),
+(2, 'Cajero'),
+(3, 'Mozo/Camarero'),
+(4, 'Adicionista'),
+(5, 'Cocina');
 
 -- --------------------------------------------------------
 
@@ -998,6 +1032,39 @@ CREATE TABLE `temporal` (
   `comentarios` varchar(300) NOT NULL,
   `descuento` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `temporal`
+--
+
+INSERT INTO `temporal` (`id`, `nro_mesa`, `producto`, `id_producto`, `cantidad`, `precio`, `total`, `estado`, `ingreso`, `comentarios`, `descuento`) VALUES
+(1, 1, 'Coca cola 500cc', 4, 1, 50, 50, 'Pendiente', '2018-12-10 18:36:03', '', NULL),
+(2, 2, 'Pizza Napolitana con Ajo y perejil', 11, 1, 280, 280, 'Pendiente', '2018-12-18 19:20:34', '', NULL),
+(3, 2, 'Coca cola 500cc', 4, 2, 50, 100, 'Pendiente', '2018-12-18 19:20:54', '', NULL),
+(4, 1, 'Fanta 500cc', 10, 2, 50, 100, 'Pendiente', '2019-01-05 18:47:20', 'Con bastante hielo', NULL),
+(5, 1, 'Pizza Napolitana con Ajo y perejil', 11, 2, 280, 560, 'Pendiente', '2019-01-05 19:46:08', '', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(10) NOT NULL,
+  `nombre` varchar(50) NOT NULL DEFAULT '0',
+  `rol` int(11) NOT NULL DEFAULT '0',
+  `password` varchar(300) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `rol`, `password`) VALUES
+(1, 'Santiago', 1, '765129f617218be6005e99eff125588787cd6443f07231af11a8b88d691179ea3ea0a4abd295dc030545633add41c5b560f1fc4529b3e3a1b84477d1c0d8292f'),
+(2, 'Ruben', 3, 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413'),
+(3, 'Luis', 5, 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413');
 
 --
 -- Índices para tablas volcadas
@@ -1022,10 +1089,22 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`);
 
 --
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `temporal`
 --
 ALTER TABLE `temporal`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -1035,7 +1114,7 @@ ALTER TABLE `temporal`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
@@ -1045,12 +1124,22 @@ ALTER TABLE `mesas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=852;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=855;
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `temporal`
 --
 ALTER TABLE `temporal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
