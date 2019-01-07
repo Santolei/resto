@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalMesa<?php echo $mesa['nro_mesa']?>" tabindex="-1" aria-labelledby="ModalMesaLabel" aria-hidden="true">
+<div class="modal fade" id="modalMesa<?php echo $mesa['nro_mesa']?>" tabindex="-1" aria-labelledby="ModalMesaLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -39,7 +39,7 @@
     			<?php endif ?>
 
     			<div class="modal-footer mt-4">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn purple-gradient" data-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-primary" name="submit">Guardar Datos</button>
           </div>
         </form>

@@ -1,7 +1,7 @@
 <?php require_once 'head.php';?>
 
-<body class="grey lighten-2">
-
+<body class="bg">
+    <div class="bg-gradient"></div>
     <!--Main Navigation-->
     <header>
 
@@ -27,15 +27,15 @@
             
                         <!-- INVENTARIO -->
                         <div class="card-body">
-                            <h4 class="m-4 text-center">
+                            <h4 class="mt-1 mb-4 text-center">
                                 <strong class="titulo-seccion">Usuarios</strong>
                             </h4>
 
                             <div class="d-flex flex-column flex-sm-row justify-content-center mb-2">
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_user">Crear nuevo usuario</a>
                             </div>
-                            <table style="width:100%; max-width: 1200px; border-bottom: 1px solid #dee2e6" class="m-auto display table table-sm" id="tabla_usuarios">
-                                <thead class="stylish-color-dark white-text">
+                            <table style="width:100%; max-width: 1200px; border-bottom: 1px solid #dee2e6" class="m-auto display table table-striped table-sm" id="tabla_usuarios">
+                                <thead class="tabla-thead white-text">
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Rol</th>

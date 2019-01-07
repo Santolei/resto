@@ -2,8 +2,8 @@
 
 <!-- Datatables -->
 <link href="public/css/addons/datatables.min.css" rel="stylesheet">
-<body class="grey lighten-2">
-
+<body class="bg">
+    <div class="bg-gradient"></div>
     <!--Main Navigation-->
     <header>
 
@@ -29,16 +29,16 @@
             
                         <!-- INVENTARIO -->
                         <div class="card-body">
-                            <h4 class="m-4 text-center">
+                            <h4 class="mb-4 text-center">
                                 <strong class="titulo-seccion">Inventario</strong>
                             </h4>
 
-                            <div class="d-flex flex-column flex-sm-row justify-content-center mb-2">
+                            <div class="d-flex flex-column flex-sm-row justify-content-center mb-4">
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_producto">Agregar producto</a>
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_categoria">Agregar Categoría</a>
                             </div>
-                            <table style="width:100%" class="display table table-sm" id="tabla_productos">
-                                <thead class="stylish-color-dark white-text">
+                            <table style="width:100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_productos">
+                                <thead class="tabla-thead white-text">
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Precio</th>

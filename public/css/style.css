@@ -24,6 +24,40 @@
   color: #fff;
 }
 
+.bg {
+  height: 100%;
+  width: 100%;
+  background-image: url('../img/bg-login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 1;
+  position: relative;
+}
+
+/* BACKGROUND */
+@media screen and (min-width: 520px){
+  .bg {
+    height: 100vh;
+  }
+}
+
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 1;
+  background: -webkit-linear-gradient(45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
+  background: -o-linear-gradient(45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
+  background: linear-gradient(to 45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
+}
+
+
 .sidebar-fixed {
   height: 100vh;
   width: 270px;
@@ -34,10 +68,16 @@
   padding: 1.5rem;
   padding-top: 0; }
   .sidebar-fixed .list-group .active {
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    -webkit-border-radius: 5px;
-    border-radius: 5px; }
+    background: #8E2DE2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-border-radius: 8px;
+    border-radius: 8px; 
+  }
+  .list-group-item.active{
+    border: none;
+
+  }
   .sidebar-fixed .logo-wrapper {
     padding: 2.5rem; }
     .sidebar-fixed .logo-wrapper img {
@@ -120,9 +160,13 @@
   top: 100px;
 }
 
-.modal-backdrop{
- position: absolute; 
+.modal {
+  z-index: 1500;
 }
+
+/*.modal-backdrop{
+ position: absolute; 
+}*/
 
 .btn-modal {
   width: 100%;
@@ -134,6 +178,10 @@
 }
 
 /* CONFIGURACION */
+
+.btn {
+  z-index: 10;
+}
 
 .config-form .form-control {
   background: rgba(158, 158, 158, 0.3);
@@ -267,5 +315,75 @@
   font-size: 1.7em;
 }
 
+/* TABLAS */
+
+.tabla-thead {background: #303f9f;}
+.purple-gradient {
+  background: #8E2DE2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.blue-gradient {
+  background: #396afc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* LOGIN */
+
+/*LOGIN*/
+
+.body-login {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/bg-login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 1;
+  position: relative;
+}
+
+.body-login .gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 1;
+  background: -webkit-gradient(linear, 45deg, from(rgba(69, 104, 220, 0.9)), to(rgba(176, 106, 179, 0.9)));
+  background: -webkit-linear-gradient(45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
+  background: -o-linear-gradient(45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
+  background: linear-gradient(to 45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%); 
+}
+
+.contenedor-login {
+  width: 300px;
+  height: 350px;
+  background: rgba(255,255,255,.99);
+  border-radius: 6px;
+  padding: 0.5em;
+  padding:1em;
+  z-index: 3;
+}
+
+.contenedor-login input {
+  margin: auto;
+}
+
+.contenedor-login .form-control {
+  margin: 0;
+}
+
+.contenedor-login img {
+  width: 70%;
+  display: block;
+  margin: auto;
+  border-radius: 6px;
+}
 
 

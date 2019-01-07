@@ -1,4 +1,13 @@
 <?php 
+	//-- Sesiones -- //
+	
+	session_start();
+
+	if (!isset($_SESSION['usuario'])) {
+		header('Location: login.php');
+	} else{
+		$usuario_login = $_SESSION['usuario'];
+	}
 	// --- Archivos de configuración y conexión a la Base de datos ---- //
 	require 'config/config.php';
 	require 'config/conexion.php';

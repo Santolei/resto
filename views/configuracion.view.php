@@ -1,7 +1,6 @@
 <?php require_once 'head.php';?>
 
-<body class="grey lighten-2">
-
+<body class="bg">
 
     <!--Main Navigation-->
     <header>
@@ -130,7 +129,9 @@
                         <!--Grid column-->
                     </div>
                 
-                <button class="btn btn-primary" name="submit" type="submit">Guardar</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" name="submit" type="submit">Guardar</button>
+                </div>
                 <div class="output_message"></div>
             </div>
             
@@ -138,6 +139,7 @@
         <!--Main layout-->
         
     </form>
+    <div class="bg-gradient"></div>
     
     <!-- Footer -->
     <?php require_once 'footer.php';?>

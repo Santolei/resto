@@ -5,7 +5,7 @@
     </a>
 
     <div class="list-group list-group-flush">
-        <a href="index.php" class="list-group-item waves-effect <?php if (isset($active_index)){echo $active_index;}?>">
+        <a href="index.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_index)){echo $active_index;}?>">
             <i class="fa fa-pie-chart mr-3"></i>Mesas
         </a>
         <a href="inventario.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_inventario)){echo $active_inventario;}?>">

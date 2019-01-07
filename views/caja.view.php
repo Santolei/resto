@@ -1,7 +1,7 @@
 <?php require_once 'head.php';?>
 
-<body class="grey lighten-2">
-
+<body class="bg">
+    <div class="bg-gradient"></div>
 
     <!--Main Navigation-->
     <header>
