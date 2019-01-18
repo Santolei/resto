@@ -48,8 +48,8 @@
 
 <script src="public/js/ajax_jquery.min.js"></script>
 
-<body class="grey lighten-2">
-
+<body class="bg">
+    <div class="bg-gradient"></div>
     <!--Main Navigation-->
     <header>
 

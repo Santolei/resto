@@ -23,6 +23,12 @@
         <a href="configuracion.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_configuracion)){echo $active_configuracion;}?>">
             <i class="fa fa-cog mr-3"></i>Configuración
         </a>
+        <ul>
+    <!-- <li><a href="#" id="btn-menu-index">INDEX</a></li>
+    <li><a href="#" id="btn-menu-inventario">INventario</a></li>
+    <li><a href="#" id="btn-menu-caja">Caja</a></li>
+    <li><a href="#" id="btn-menu-configuracion"">Configuracion</a></li> -->
+</ul>
     </div>
 
 </div>

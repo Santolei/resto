@@ -34,9 +34,7 @@
           $('#button-collapse-sidebar').on('click', function(){
             var sidebar = $('.sidebar-fixed');
             var main = $('#main');
-           
-           
-
+            
             if ($(window).width() < 768) {
                sidebar.toggleClass('slideInLeft');
             }

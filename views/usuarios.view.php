@@ -47,8 +47,9 @@
                                             <td class="pb-0"><?php echo $usuario['id_usuario'] ?></td>
                                             <td><?php echo $usuario['nombre'] ?></td>
                                             <td> <?php echo roles($usuario['rol']) ?></td>
-                                            <td><a href=""><i class="fa fa-edit fa-2x"></i></a></td>
+                                            <td><a data-toggle="modal" data-target="#modal_edit_user<?php echo $usuario['id_usuario'] ?>"><i class="fa fa-edit fa-2x"></i></a></td>
                                         </tr>
+                                        <?php include "modals/modal_edit_user.php" ?>
                                     <?php endforeach ?>
                                 </tbody>
                             </table>

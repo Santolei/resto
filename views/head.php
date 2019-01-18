@@ -16,5 +16,31 @@
     <link href="public/css/style.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shorcut icon" href="public/img/favicon.ico">
+    <!-- JQuery -->
+    <!-- <script type="text/javascript" src="public/js/jquery-3.3.1.min.js"></script> -->
+    <!-- CARGAR VISTAS -->
+
+    <!-- <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btn-menu-index').on('click', function() {
+                $("#content").load('ajax-index.php');
+                return false;
+            });
+
+            $('#btn-menu-inventario').on('click', function() {
+                $("#content").load('ajax-inventario.php');
+                return false;
+            });
+
+             $('#btn-menu-caja').on('click', function() {
+                $("#content").load('ajax-caja.php');
+                return false;
+            });
+             $('#btn-menu-configuracion').on('click', function() {
+                $("#content").load('ajax-configuracion.php');
+                return false;
+            });
+        });
+    </script> -->
 </head>
 
