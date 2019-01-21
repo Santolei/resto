@@ -10,10 +10,17 @@ require 'config/conexion.php';
 // Agrego el 'Active' en el sidebar.
 $active_caja="active";
 
+// Voy a traer los datos de roles y usuarios
+
+require_once 'consultas/roles.php';
+require_once 'consultas/usuarios.php';
+
 // --------------------------------- //
 // --------------------------------- //
 
+// Esta sección solo la verán los administradores
 
+include 'inc/permisoAdmin.php';
 
 // --------------------------------- //
 // --------------------------------- //

@@ -109,16 +109,18 @@
 
     /* MESAS DEL HOME */
 .mesa {
-  width: 125px !important;
-  max-width: 125px;
-  height: 125px !important;
-  
+  width: 140px !important;
+  max-width: 140px;
+  height: 140px !important;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 2px 7px 0 rgba(0,0,0,.12);
   background: url('../img/mesa.png');
   -webkit-background-size: 110px 110px;
   background-size: 110px 110px;
   background-position: 10px 9px;
+}
+
+.mesa:hover {
 }
 
 .mesa .badge {

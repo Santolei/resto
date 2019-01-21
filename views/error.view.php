@@ -23,51 +23,28 @@
                     <!--Grid column-->
                     <div class="col-12 mb-4">
                 
-                        <!--Card-->
-                        <div class="card">
-                
-                            <!-- MESAS -->
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-3">
-                
-                                    <h5 class="mb-2 mb-sm-0 pt-1 titulo-seccion">
-                                        <strong>Mesas</strong>
-                                    </h5>
-                
-                                    <h5 class="mb-2 mb-sm-0 pt-1">
-                                        <span>Salón 1</span>
-                                    </h5>
-                
-                                </div>
-                
-                                <hr class="mdb-color lighten-3">  
-                                <div class="row d-flex justify-content-center">
-                
-                                    <!-- Recorro la fila mesas y traigo los datos de la bd -->
-                                    <!-- Se muestran solo las mesas que esten definidas por el 
-                                         usuario en la configuración. -->
-                                         
-                                    <?php foreach ($mesas as $mesa): ?>
-                                        <!-- Mesa -->
-                                        <a class="mesa col-12 col-sm-6 col-lg-3 m-2 waves-effect" data-toggle="modal" data-target="#modalMesa<?php echo $mesa['nro_mesa']?>">
-                                            <div class="badge badge-primary nro-mesa">Mesa <?php echo $mesa['nro_mesa'] ?></div>
-                                            
-                                            <div class="badge estado-mesa 
-                                                <?php if ($mesa['estado'] == "Disponible"): ?>
-                                                    badge-success
-                                                <?php else: ?>
-                                                    badge-danger
-                                                <?php endif ?>"><?php echo $mesa['estado'] ?>
-                                            </div>
-                                        </a>
-                                        <!-- Incluyo el archivo que carga el Modal de la mesa -->
-                                        <?php include 'modals/modal_mesa.php';?>
-                                    <?php endforeach ?>
-                                </div>
+                        <!-- ERROR -->
+                            
+                      <div class="modal-dialog modal-notify modal-danger" role="document">
+                        <!--Content-->
+                        <div class="modal-content">
+                          <!--Header-->
+                          <div class="purple-gradient">
+                            <p class="display-4 text-center animated wow hinge text-light" data-wow><strong>¡Oops!</strong></p>
+                          </div>
+
+                          <!--Body-->
+                          <div class="modal-body">
+                            <div class="text-center">
+                                
+                              <i class="fa fa-times fa-5x mb-3 animated rotateIn"></i>
+                              <h4 class="animated fadeIn">Lo siento, no tienes permiso para ver este contenido, si crees que es un error por favor contacta al soporte.</h4>
+                              <img src="public/img/error.png" class="img-fluid animated jello" alt="">
                             </div>
-                
+                          </div>
                         </div>
-                        <!--/.Card-->
+                        <!--/.Content-->
+                              
                 
                     </div>
                     <!--Grid column-->

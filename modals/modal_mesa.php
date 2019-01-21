@@ -33,14 +33,14 @@
             <hr>
 
             <div class="d-flex justify-content-center">
-              <a class="btn btn-modal stylish-color-dark" href="ver_cuenta.php?id=<?php echo $mesa['nro_mesa'] ?>">Ver Cuenta</a>
-              <a class="btn btn-modal stylish-color-dark" href="mesa.php?id=<?php echo $mesa['nro_mesa'] ?>">Pedidos</a>
+              <a class="btn stylish-color-dark w-100 mr-0" href="ver_cuenta.php?id=<?php echo $mesa['nro_mesa'] ?>">Ver Cuenta</a>
+              <a class="btn stylish-color-dark w-100" href="mesa.php?id=<?php echo $mesa['nro_mesa'] ?>">Pedidos</a>
             </div>
     			<?php endif ?>
 
-    			<div class="modal-footer mt-4">
-            <button type="button" class="btn purple-gradient" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" name="submit">Guardar Datos</button>
+    			<div class="modal-footer pl-0 pr-0 d-flex flex-column-reverse flex-sm-row justify-content-center mt-4">
+            <button type="button" class="btn purple-gradient w-100 mr-0" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary w-100" name="submit">Guardar Datos</button>
           </div>
         </form>
       </div>
