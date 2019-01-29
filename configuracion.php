@@ -26,6 +26,15 @@
 	// --------------------------------- //
 	// --------------------------------- //
 
+	// Voy a traer los datos de roles y usuarios
+
+	require_once 'consultas/roles.php';
+	require_once 'consultas/usuarios.php';	
+
+	// Esta sección solo la verán los administradores
+
+	include 'inc/permisoAdmin.php';
+
 	// Edito la cantidad de mesas que quiera mostrar el usuario
 
 	require 'consultas/edit_cantidad_mesas.php';

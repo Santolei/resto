@@ -200,6 +200,7 @@
                                       <th class="print-derecha" scope="col">Cantidad</th>
                                       <th class="ocultar" scope="col precio">Precio</th>
                                       <th class="ocultar" scope="col total">Total</th>
+                                      <th class="ocultar" scope="col Eliminar"></th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -210,7 +211,9 @@
                                           <td class="print-derecha"><?php echo $pedido['cantidad']; ?></td>
                                           <td class="ocultar"><?php echo $pedido['precio']; ?></td>
                                           <td class="ocultar"><?php echo $pedido['total']; ?></td>
+                                          <td class="ocultar text-center"><a data-toggle="modal" data-target="#modal_borrar_pedido<?php echo $pedido['id']; ?>"> <i class="fa fa-times fa-2x text-danger"></i></a></td>
                                         </tr>
+                                        <?php include 'modals/modal_borrar_pedido.php' ?>
                                         
                                     <?php endforeach ?>
                                         <div class="d-flex justify-content-between">

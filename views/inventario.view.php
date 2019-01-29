@@ -60,6 +60,9 @@
             </div><!--Grid row-->
         </div>
 
+        <!-- MENSAJE DE SUCCESS O ERROR -->
+        <div class="output-message"></div>
+
         <!-- INCLUYO LOS ARCHIVOS DEL MODAL DE AGREGAR PRODUCTOS Y CATEGORIAS -->
         <?php include "modals/modal_add_producto.php" ?>
         <?php include "modals/modal_add_categoria.php" ?>
