@@ -310,7 +310,8 @@
                                     <?php include "modals/modal_descuento.php" ?>
                                 </div>
                                 <div class="d-flex button-descuento">
-                                    <a class="btn btn-danger">Cerrar Mesa</a>
+                                    <a data-toggle="modal" data-target="#modalCerrarMesa<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
+                                    <?php include "modals/modal_cerrar_mesa.php" ?>
                                 </div>
                             </div>
                 

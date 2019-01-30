@@ -50,7 +50,6 @@
 			WHERE nro_mesa = '$nro_mesa';
 		");
 		$statement2->execute();
-
 		
 		header("Location: ../index.php");
 	}
