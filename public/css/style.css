@@ -405,3 +405,11 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
   box-shadow: 1px 1px 2px #222;
 }
 
+
+/* MEDIA QUERIES VARIAS */
+
+@media screen and (max-width: 768px){
+  .footer-copyright {
+    display: none;
+  }
+}

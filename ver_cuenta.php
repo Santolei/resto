@@ -42,12 +42,15 @@ if (!$con) {
 	// --------------------------------- //
 	// Traigo el descuento si lo hay 
 	// --------------------------------- //
+	$descuento = 0;
+	if (isset($cuenta[0]['descuento'])) {
+		$descuento = $cuenta[0]['descuento'];
+		$subtotal_mesa = $total_mesa[0];
+		$subtotal = ($subtotal_mesa * $descuento) / 100; 
 
-	$descuento = $cuenta[0]['descuento'];
-	$subtotal_mesa = $total_mesa[0];
-	$subtotal = ($subtotal_mesa * $descuento) / 100; 
-
-	$total_con_descuento = ($subtotal_mesa - $subtotal);
+		$total_con_descuento = ($subtotal_mesa - $subtotal);
+	}
+	
 
 	// --------------------------------- //
 	// Traigo la fecha y hora 

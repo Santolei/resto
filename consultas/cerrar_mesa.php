@@ -41,12 +41,17 @@
 
 	$total_con_descuento = ($subtotal_mesa - $subtotal);
 
+	/*
+	|--------------------------------------------------------------------------
+	| Borro datos de la tabla temporal
+	|--------------------------------------------------------------------------
+	*/
 
-	// $statement2 = $con->prepare ("
-	// 	DELETE FROM temporal
-	// 	WHERE nro_mesa = '$nro_mesa';
-	// ");
-	// $statement2->execute();
+	$statement2 = $con->prepare ("
+		DELETE FROM temporal
+		WHERE nro_mesa = '$nro_mesa';
+	");
+	$statement2->execute();
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,14 +59,14 @@
 	|--------------------------------------------------------------------------
 	*/
 
-	// $statement3 = $con->prepare ("
-	// 	UPDATE mesas 
-	// 	SET estado = 'Disponible'
-	// 	WHERE nro_mesa = '$nro_mesa';
-	// ");
-	// $statement3->execute();
+	$statement3 = $con->prepare ("
+		UPDATE mesas 
+		SET estado = 'Disponible'
+		WHERE nro_mesa = '$nro_mesa';
+	");
+	$statement3->execute();
 	
-	// header("Location: ../index.php");
-	print_r($total_con_descuento);
+	header("Location: ../index.php");
+	
 
  ?>
