@@ -3,8 +3,9 @@
 
 	require '../config/config.php';
 	require '../config/conexion.php';
+	require '../config/funciones.php';
 
-	$nro_mesa = $_GET['id'];
+	$nro_mesa = $_POST['nro_mesa'];
 
 	/*
 	|--------------------------------------------------------------------------
@@ -47,15 +48,18 @@
 	|--------------------------------------------------------------------------
 	*/
 
-	// $statement = $con->prepare('
-	// 	INSERT INTO caja (monto, metodo_pago) 
-	// 	VALUES(:monto, :metodo_pago)
-	// 	');
+	$statement = $con->prepare('
+		INSERT INTO caja (monto, metodo_pago, anio,mes, dia) 
+		VALUES(:monto, :metodo_pago, :anio, :mes, :dia)
+		');
 
-	// $statement->execute(array(
-	// 	':nombre' => $_POST['nombre'],
-	// 	':precio' => $_POST['precio']
-	// ));
+	$statement->execute(array(
+		':monto' => $_POST['monto'],
+		':metodo_pago' => $_POST['metodo'],
+		':anio' => date('Y'),
+		':mes' => mes(),
+		':dia' => date('Y-m-d')
+	));
 
 	/*
 	|--------------------------------------------------------------------------

@@ -32,7 +32,7 @@
 
 	if (isset ($_POST['cant_mesas'])) {
 		$cantidad_mesas = $_POST['cant_mesas'];
-		if ($cantidad_mesas <= 30) {
+		if ($cantidad_mesas <= 50) {
 			$statement = $con->prepare("
 			UPDATE config
 			SET cantidad_mesas = $cantidad_mesas;
@@ -41,7 +41,7 @@
 		$success = True;
 		}
 		else {
-			$errores = 'No se pueden mostrar más de 30 mesas';
+			$errores = 'No se pueden mostrar más de 50 mesas';
 		}
 		
 	}

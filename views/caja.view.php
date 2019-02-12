@@ -36,9 +36,9 @@
                                     <i class="fa fa-bar-chart red accent-2 mt-1"></i>
                                 </div>
                                 <div class="float-right">
-                                    <div class="titulo-card">Ganancia Diaria:</div>
+                                    <div class="titulo-card">Día <?php echo date('d'.'-M'.'-Y') ?></div>
                                     <div class="ganancia text-right">
-                                        <strong>$4450</strong>
+                                        <strong>$<?php echo $montodiario ?></strong>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                 <div class="float-right">
                                     <div class="titulo-card">Ganancia Mensual:</div>
                                     <div class="ganancia text-right">
-                                        <strong>$23100</strong>
+                                        <strong>$<?php echo $montomensual ?></strong>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 <div class="float-right">
                                     <div class="titulo-card">Ganancia Anual:</div>
                                     <div class="ganancia text-right">
-                                        <strong>$134450</strong>
+                                        <strong>$<?php echo $montoanual ?></strong>
                                     </div>
                                 </div>
                             </div>
@@ -86,11 +86,19 @@
                                 <div class="float-right">
                                     <div class="titulo-card">Ganancia Total:</div>
                                     <div class="ganancia text-right">
-                                        <strong>$233443</strong>
+                                        <strong>$<?php echo $ingresos_totales ?></strong>
                                     </div>
                                 </div>
                             </div>
                         </div>   
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <h4 class="text-center m-4 titulo-seccion">Generar reporte</h4>
+                        </div>
                     </div>
                 </div>
             </div>

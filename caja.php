@@ -24,8 +24,9 @@ include 'inc/permisoAdmin.php';
 
 // --------------------------------- //
 // --------------------------------- //
+// Voy a traer los datos de las ganancias
 
-
+require_once 'consultas/ganancias.php';
 
 // -- Template del index -- //
 require 'views/caja.view.php';
