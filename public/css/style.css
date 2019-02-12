@@ -20,6 +20,20 @@
     background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
     background: linear-gradient(40deg,#45cafc,#303f9f)!important;
 }
+
+.btn-productos-menu {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px){
+  .btn-categorias,
+  .btn-productos-menu {
+    width: 22%;
+    padding: .5em .2em;
+    font-size: .8em;
+  }
+   
+}
 .stylish-color-dark:hover{
   color: #fff;
 }
@@ -34,6 +48,10 @@
   background-attachment: fixed;
   z-index: 1;
   position: relative;
+}
+
+.bg main {
+  height: 100vh;
 }
 
 /* BACKGROUND */

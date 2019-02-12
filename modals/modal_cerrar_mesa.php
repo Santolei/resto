@@ -11,7 +11,12 @@
 
       <!--Body-->
       <div class="modal-body">
-        <p>Se guardará en la caja el valor $ valor de la cuenta</p>
+        <?php if ($total_con_descuento): ?>
+          <p>Se guardará en la caja un monto por $<?php echo $total_con_descuento ?> </p>
+        <?php else: ?>
+          <p>Se guardará en la caja un monto por $<?php echo $subtotal_mesa ?> </p>
+        <?php endif ?>
+        
 
         <i class="fa fa-times fa-4x animated rotateIn"></i>
 

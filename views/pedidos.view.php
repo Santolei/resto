@@ -30,7 +30,7 @@
                             <h4 class="mt-1 mb-4 text-center">
                                 <strong class="titulo-seccion">Pedidos</strong>
                             </h4>
-                            <table style="width:100%; max-width: 1200px; border-bottom: 1px solid #dee2e6" class="m-auto display table table-striped table-sm" id="tabla_usuarios">
+                            <table style="width:100%; max-width: 100%; border-bottom: 1px solid #dee2e6" class="m-auto display table table-striped table-sm" id="tabla_usuarios">
                                 <thead class="tabla-thead white-text">
                                     <th>N° de mesa</th>
                                     <th>Producto</th>

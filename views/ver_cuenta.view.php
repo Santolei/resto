@@ -69,7 +69,7 @@
             <div class="output_message"></div>
                 <?php if ($date === '01-01-1970'): ?>
                     <!-- Central Modal Medium Danger -->
-                    <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);">
+                    <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%); width: 100%; max-width: 350px;">
                       <div class="modal-dialog modal-notify modal-danger" role="document">
                         <!--Content-->
                         <div class="modal-content">
@@ -91,6 +91,7 @@
                           <!--Footer-->
                           <div class="modal-footer justify-content-center">
                             <a type="button" class="btn btn-danger" href="index.php">Volver al inicio<i class="fa fa-reply-all ml-1 text-white"></i></a>
+                            <a href="consultas/cerrar_mesa.php?id=<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
                           </div>
                         </div>
                         <!--/.Content-->

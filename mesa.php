@@ -14,6 +14,9 @@
 	// --- Archivos de configuración y conexión a la Base de datos ---- //
 	require 'config/config.php';
 	require 'config/conexion.php';
+	// --- Consulta de productos y categorias ---- //
+	require 'consultas/productos.php';
+	require 'consultas/categorias.php';
 
 	// --------------------------------- //
 	// --------------------------------- //
@@ -60,7 +63,7 @@
 	// --------------------------------- //
 	// Template de mesa.php
 	// --------------------------------- //
-	require 'views/mesa.view.php';
+	require 'views/mesa_nueva.view.php';
 
 
 

@@ -42,14 +42,18 @@ if (!$con) {
 	// --------------------------------- //
 	// Traigo el descuento si lo hay 
 	// --------------------------------- //
-	$descuento = 0;
-	if (isset($cuenta[0]['descuento'])) {
-		$descuento = $cuenta[0]['descuento'];
-		$subtotal_mesa = $total_mesa[0];
-		$subtotal = ($subtotal_mesa * $descuento) / 100; 
+	
+	if (!isset($cuenta[0]['descuento'])) {
+		$descuento = 0;
 
-		$total_con_descuento = ($subtotal_mesa - $subtotal);
+	} else{
+		$descuento = $cuenta[0]['descuento'];
 	}
+
+	$subtotal_mesa = $total_mesa[0];
+	$subtotal = ($subtotal_mesa * $descuento) / 100; 
+
+	$total_con_descuento = ($subtotal_mesa - $subtotal);
 	
 
 	// --------------------------------- //
