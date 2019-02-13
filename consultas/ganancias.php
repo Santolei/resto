@@ -6,6 +6,14 @@ $anio = date('Y');
 $mes_actual = mes();
 $dia_actual = date('Y-m-d');
 
+// tabla de ingresos totales
+
+$ingresos = $con->prepare("
+	SELECT *  
+	FROM caja");
+$ingresos->execute();
+$ingresos = $ingresos->fetchAll();
+
 // Monto ingresos TOTALES
 
 $statement = $con->prepare("

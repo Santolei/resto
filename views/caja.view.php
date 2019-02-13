@@ -96,9 +96,20 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                            <h4 class="text-center m-4 titulo-seccion">Generar reporte</h4>
-                        </div>
+                        <div class="card p-4">
+                            <h4 class="text-center titulo-seccion">Generar reporte</h4>
+
+                            <table style="width:100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_ingresos">
+                                <thead class="tabla-thead white-text">
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Categoría</th>
+                                    <th>Stock</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -109,6 +120,24 @@
     
     <!-- Footer -->
     <?php require_once 'footer.php';?>
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="public/js/addons/datatables.min.js"></script>
+
+    <script>
+            
+        $(document).ready(function () {
+          $('#tabla_ingresos').DataTable({
+            "processing": true,
+            "serverSide": true,
+            autoFill: true,
+            "ajax": "consultas/productosjson.php",
+            "language": {
+              "url": "public/js/addons/datatablesspanish.json"
+            }
+          });
+          $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
 
     
     

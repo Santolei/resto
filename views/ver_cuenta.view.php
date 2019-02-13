@@ -91,7 +91,7 @@
                           <!--Footer-->
                           <div class="modal-footer justify-content-center">
                             <a type="button" class="btn btn-danger" href="index.php">Volver al inicio<i class="fa fa-reply-all ml-1 text-white"></i></a>
-                            <a href="consultas/cerrar_mesa.php?id=<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
+                            <a href="consultas/cerrar_mesa_vacia.php?id=<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
                           </div>
                         </div>
                         <!--/.Content-->
