@@ -97,15 +97,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card p-4">
-                            <h4 class="text-center titulo-seccion">Generar reporte</h4>
+                            <h4 class="text-center titulo-seccion">Últimas ventas</h4>
 
                             <table style="width:100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_ingresos">
                                 <thead class="tabla-thead white-text">
                                     <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Precio</th>
-                                    <th>Categoría</th>
-                                    <th>Stock</th>
+                                    <th>Fecha</th>
+                                    <th>Monto</th>
+                                    <th>Método de pago</th>
                                 </thead>
                                 <tbody></tbody>
                             </table>
@@ -122,21 +121,31 @@
     <?php require_once 'footer.php';?>
     <!-- MDBootstrap Datatables  -->
     <script type="text/javascript" src="public/js/addons/datatables.min.js"></script>
-
+    <script type="text/javascript" src="public/js/addons/dataTables.altEditor.js"></script>
+    <style type="text/css">
+        .footer-copyright {
+            display: none;
+        }
+    </style>
     <script>
             
         $(document).ready(function () {
-          $('#tabla_ingresos').DataTable({
-            "processing": true,
+          var tbl = $('#tabla_ingresos').DataTable({
+            "processing": false,
             "serverSide": true,
             autoFill: true,
-            "ajax": "consultas/productosjson.php",
+            "ajax": "consultas/caja_json.php",
+            "order": [[ 0, 'desc' ], [ 1, 'asc' ]],
+            "searching": false,
             "language": {
               "url": "public/js/addons/datatablesspanish.json"
             }
           });
+
           $('.dataTables_length').addClass('bs-select');
         });
+
+
     </script>
 
     

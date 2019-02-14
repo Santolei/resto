@@ -35,10 +35,10 @@ class SSP {
 				$column = $columns[$j];
 				// Is there a formatter?
 				if ( isset( $column['formatter'] ) ) {
-					$row[ $column['dt'] ] = $column['formatter']( $data[$i][ $column['db'] ], $data[$i] );
+					$row[ $column['dt'] ] = htmlentities($column['formatter']( $data[$i][ $column['db'] ], $data[$i] ));
 				}
 				else {
-					$row[ $column['dt'] ] = $data[$i][ $columns[$j]['db'] ];
+					$row[ $column['dt'] ] = htmlentities($data[$i][ $columns[$j]['db'] ]);
 				}
 			}
 			$out[] = $row;
@@ -340,6 +340,7 @@ class SSP {
 				"The error reported by the server was: ".$e->getMessage()
 			);
 		}
+		$db->exec("set names utf8");
 		return $db;
 	}
 	/**
