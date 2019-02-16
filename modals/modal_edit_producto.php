@@ -1,11 +1,11 @@
-<!-- Modal de agregar producto -->
+<!-- Modal de editar producto -->
 <div class="modal fade" id="modal_edit_producto<?php echo $producto['id_producto']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-notify" role="document">
     <!--Content-->
     <div class="modal-content">
       <!--Header-->
-      <div class="modal-header success-color">
+      <div class="modal-header info-color">
         <p class="heading lead">Editar producto</p>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -27,7 +27,16 @@
           </div>
           <div class="form-group">
             <label for="categoria">Categoría:</label>
-            <input class="form-control" type="text" name="categoria" id="categoria" value="<?php echo $producto['categoria']; ?>" autocomplete="off">
+            <select class="form-control" name="categoria" id="categoria" selected="<?php echo $producto['categoria']; ?>">
+             
+              <?php foreach ($categorias as $categoria): ?>
+                <option value="<?php echo $categoria['nombre'] ?>" 
+                  <?php if ($producto['categoria'] == $categoria['nombre']): ?>
+                  <?php echo 'selected' ?>
+                  <?php endif ?>
+                  ><?php echo $categoria['nombre'] ?></option>
+              <?php endforeach ?>
+            </select>
           </div>
           <div class="form-group">
             <label for="stock">Stock:</label>
@@ -35,8 +44,8 @@
           </div>
           <!--Footer-->
         <div class="modal-footer justify-content-center">
-          <button type="submit" class="btn success-color white-text">Guardar</button>
-          <a class="btn btn-outline-success waves-effect" data-dismiss="modal">Salir</a>
+          <button type="submit" class="btn info-color white-text">Guardar</button>
+          <a class="btn btn-outline-info waves-effect" data-dismiss="modal">Salir</a>
         </div>
         </form>
       </div>

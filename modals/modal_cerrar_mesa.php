@@ -1,7 +1,7 @@
 <!--Modal: modalConfirmDelete-->
 <div class="modal fade" id="modalCerrarMesa<?php echo $nro_mesa; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
     <!--Content-->
     <div class="modal-content text-center">
       <!--Header-->
@@ -38,7 +38,7 @@
         <!--Footer-->
         <div class="modal-footer flex-center">
           <button type="submit" class="btn btn-outline-danger">Aceptar</button>
-          <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">Salir</a>
+          <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">Cancelar</a>
         </div>
       </form>
     </div>

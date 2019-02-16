@@ -6,23 +6,23 @@ require '../config/conexion.php';
 
 // --------------------------------- //
 // --------------------------------- //
-// Inserto el nuevo producto en la BD
+// Traigo datos del formulario
+$id_categoria = $_GET['id'];
 
-$nombre = $_POST['nombre_categoria'];
+// --------------------------------- //
+// --------------------------------- //
+// Borro el producto de la BD
 
 if (!$con) {
 	echo 'Fallo la conexion';
 } else {
 	$statement = $con->prepare("
-		INSERT INTO categorias(nombre) 
-		VALUES('$nombre')
+		DELETE FROM categorias
+		WHERE id_categoria = '$id_categoria'
+		LIMIT 1
 		");
 
 	$statement->execute();
 	header("Location: ../categorias.php");
-}
-
-		
-
-		
+}		
 ?>

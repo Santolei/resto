@@ -7,11 +7,8 @@ require '../config/conexion.php';
 // --------------------------------- //
 // --------------------------------- //
 // Traigo datos del formulario
-$id_producto = $_POST['id_producto'];
+$id_categoria = $_POST['id_categoria'];
 $nombre = $_POST['nombre'];
-$precio = $_POST['precio'];
-$categoria = $_POST['categoria'];
-$stock = $_POST['stock'];
 
 // --------------------------------- //
 // --------------------------------- //
@@ -21,17 +18,13 @@ if (!$con) {
 	echo 'Fallo la conexion';
 } else {
 	$statement = $con->prepare("
-		UPDATE productos
-		SET nombre = '$nombre',
-			precio = '$precio',
-			categoria = '$categoria',
-			stock = '$stock'
-		WHERE id_producto = '$id_producto'
+		UPDATE categorias
+		SET nombre = '$nombre'
+		WHERE id_categoria = '$id_categoria'
 		");
 
 	$statement->execute();
-	echo ($id_producto.$nombre.$precio.$categoria.$stock);
-	header("Location: ../editar_producto.php?id=$id_producto");
+	header("Location: ../editar_categoria.php?id=$id_categoria");
 }
 
 		
