@@ -28,14 +28,10 @@
                 
                             <!-- MESAS -->
                             <div class="card-body">
-                                <div class="d-flex justify-content-between mb-3">
+                                <div class="d-flex justify-content-center mb-3">
                 
                                     <h5 class="mb-2 mb-sm-0 pt-1 titulo-seccion">
                                         <strong>Mesas</strong>
-                                    </h5>
-                
-                                    <h5 class="mb-2 mb-sm-0 pt-1">
-                                        <span>Salón 1</span>
                                     </h5>
                 
                                 </div>
@@ -74,8 +70,7 @@
                     
                 </div><!--Grid row--></div>
         </div>
-
-        
+        <?php include 'modals/modal_backup.php' ?>
     </main>
     <!--Main layout-->
     <div class="bg-gradient"></div>
@@ -127,6 +122,16 @@
         });
         
     </script>
+
+    <?php if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario. ?>
+    <script>
+    $(document).ready(function()
+    {
+      // id de nuestro modal
+      $("#modalBackup").modal("show");
+    });
+    </script>
+    <?php endif; ?>
 
 </body>
 

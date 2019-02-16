@@ -67,7 +67,7 @@
         <div class="container-fluid mt-5">
             <div class="row"><!--Grid row-->
             <div class="output_message"></div>
-                <?php if ($date === '01-01-1970'): ?>
+                <?php if (!$cuenta): ?>
                     <!-- Central Modal Medium Danger -->
                     <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%); width: 100%; max-width: 350px;">
                       <div class="modal-dialog modal-notify modal-danger" role="document">

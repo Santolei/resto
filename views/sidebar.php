@@ -7,7 +7,7 @@
  ?>
 
 <div class="sidebar-fixed position-fixed animated">
-    <a class="logo-wrapper waves-effect">
+    <a class="logo-wrapper waves-effect" href="index.php">
         <img src="public/img/logo.png" class="img-fluid" alt="">
     </a>
 
@@ -49,13 +49,15 @@
             <i class="fa fa-cog mr-3"></i>Configuración
         </a>
         <?php endif ?>  
+
+        <a class="list-group-item list-group-item-action waves-effect" href="logout.php"><i class="fa fa-sign-out mr-3"></i>Salir</a>
         
         <ul>
-    <!-- <li><a href="#" id="btn-menu-index">INDEX</a></li>
-    <li><a href="#" id="btn-menu-inventario">INventario</a></li>
-    <li><a href="#" id="btn-menu-caja">Caja</a></li>
-    <li><a href="#" id="btn-menu-configuracion"">Configuracion</a></li> -->
-</ul>
+            <!-- <li><a href="#" id="btn-menu-index">INDEX</a></li>
+            <li><a href="#" id="btn-menu-inventario">INventario</a></li>
+            <li><a href="#" id="btn-menu-caja">Caja</a></li>
+            <li><a href="#" id="btn-menu-configuracion"">Configuracion</a></li> -->
+        </ul>
     </div>
-
+        
 </div>
