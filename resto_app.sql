@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-02-2019 a las 15:54:58
+-- Tiempo de generación: 20-02-2019 a las 01:01:54
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.0.32
 
@@ -43,30 +43,21 @@ CREATE TABLE `caja` (
 --
 
 INSERT INTO `caja` (`id`, `fecha`, `dia`, `mes`, `anio`, `monto`, `metodo_pago`) VALUES
-(2, '2019-01-12 12:29:20', '0000-00-00', 'Enero', 2019, 134.1, 'Efectivo'),
-(3, '2019-01-11 12:30:13', '0000-00-00', 'Enero', 2019, 340, 'Tarj Crédito'),
-(4, '2019-01-10 12:33:29', '0000-00-00', 'Enero', 2019, 95, 'Efectivo'),
-(5, '2018-06-09 12:42:01', '0000-00-00', 'Septiembre', 2019, 616.55, 'Efectivo'),
-(6, '2019-02-12 18:23:25', '0000-00-00', 'Febrero', 2019, 153, 'Efectivo'),
-(7, '2019-02-12 18:44:36', '0000-00-00', 'Febrero', 2019, 50, 'Efectivo'),
-(8, '2019-02-12 18:46:36', '0000-00-00', 'Febrero', 2019, 195, 'Tarj Crédito'),
-(9, '2019-02-12 19:25:27', '0000-00-00', 'Febrero', 2019, 500, 'Efectivo'),
-(10, '2019-02-12 19:41:30', '2019-02-12', 'Febrero', 2019, 1195, 'Efectivo'),
-(11, '2019-02-12 20:44:12', '2019-02-13', 'Febrero', 2019, 630, 'Tarj Débito'),
-(12, '2019-02-13 16:55:44', '2019-02-13', 'Febrero', 2019, 150, 'Tarj Débito'),
-(13, '2019-02-14 10:55:55', '2019-02-14', 'Febrero', 2019, 369, 'Tarj Crédito'),
-(14, '2019-02-14 19:48:44', '2019-02-14', 'Febrero', 2019, 250, 'Efectivo'),
-(15, '2019-02-14 19:49:18', '2019-02-14', 'Febrero', 2019, 1, 'Efectivo'),
-(17, '2019-02-14 20:18:33', '2019-02-14', 'Febrero', 2019, 75, 'Efectivo'),
-(18, '2019-02-15 16:53:07', '2019-02-15', 'Febrero', 2019, 522.5, 'Tarj Débito'),
-(19, '2019-02-15 20:00:18', '2019-02-15', 'Febrero', 2019, 200, 'Efectivo'),
-(20, '2019-02-15 20:43:30', '2019-02-15', 'Febrero', 2019, 120, 'Tarj Crédito'),
-(21, '2019-02-15 21:02:46', '2019-02-15', 'Febrero', 2019, 750, 'Efectivo'),
-(22, '2019-02-15 21:03:15', '2019-02-15', 'Febrero', 2019, 200, 'Tarj Débito'),
-(23, '2019-02-16 09:11:14', '2019-02-16', 'Febrero', 2019, 375, 'Efectivo'),
-(27, '2019-02-16 09:31:30', '2019-02-16', 'Febrero', 2019, 5980, 'Tarj Crédito'),
-(28, '2019-02-16 11:15:30', '2019-02-16', 'Febrero', 2019, 70, 'Efectivo'),
-(29, '2019-02-16 11:49:53', '2019-02-16', 'Febrero', 2019, 45, 'Tarj Débito');
+(1, '2019-02-19 12:50:54', '2019-02-19', 'Febrero', 2019, 345, 'Efectivo'),
+(2, '2019-02-19 12:51:19', '2019-02-19', 'Febrero', 2019, 403.75, 'Efectivo'),
+(3, '2019-02-19 17:07:02', '2019-02-19', 'Febrero', 2019, 655, 'Tarj Débito'),
+(4, '2019-02-19 17:56:03', '2019-02-19', 'Febrero', 2019, 585, 'Efectivo'),
+(5, '2019-02-19 17:57:32', '2019-02-19', 'Febrero', 2019, 185, 'Efectivo'),
+(6, '2019-02-19 17:58:43', '2019-02-19', 'Febrero', 2019, 75, 'Efectivo'),
+(7, '2019-02-19 17:59:14', '2019-02-19', 'Febrero', 2019, 150, 'Efectivo'),
+(8, '2019-02-19 18:32:23', '2019-02-19', 'Febrero', 2019, 300, 'Efectivo'),
+(9, '2019-02-19 18:45:55', '2019-02-19', 'Febrero', 2019, 495, 'Efectivo'),
+(10, '2019-02-19 18:46:33', '2019-02-19', 'Febrero', 2019, 340, 'Efectivo'),
+(11, '2019-02-19 18:47:39', '2019-02-19', 'Febrero', 2019, 445, 'Efectivo'),
+(12, '2019-02-19 18:51:09', '2019-02-19', 'Febrero', 2019, 935.75, 'Tarj Crédito'),
+(13, '2019-02-19 19:48:36', '2019-02-19', 'Febrero', 2019, 255, 'Efectivo'),
+(14, '2019-02-19 19:51:16', '2019-02-19', 'Febrero', 2019, 225, 'Efectivo'),
+(15, '2019-02-19 19:52:10', '2019-02-19', 'Febrero', 2019, 350, 'Tarj Débito');
 
 -- --------------------------------------------------------
 
@@ -104,7 +95,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`cantidad_mesas`) VALUES
-(12);
+(50);
 
 -- --------------------------------------------------------
 
@@ -219,7 +210,7 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `categoria`, `stock`
 (1, 'Pizza Muzarella', 200, 'Comidas', 10, '1'),
 (2, 'Pizza Napolitana', 250, 'comidas', 0, '2'),
 (3, 'Empanada', 30, 'Entradas', 100, '3'),
-(4, 'Coca cola 500cc', 50, 'bebidas', 50, '4'),
+(4, 'Coca cola 500cc', 60, 'Bebidas', 50, '4'),
 (5, 'Vino Toro', 100, 'bebidas', 14, '5'),
 (6, 'Flan casero', 75, 'postres', 14, '6'),
 (7, 'Helado', 70, 'postres', 0, '7'),
@@ -309,8 +300,44 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `rol`, `password`) VALUES
 (1, 'Santiago', 1, '765129f617218be6005e99eff125588787cd6443f07231af11a8b88d691179ea3ea0a4abd295dc030545633add41c5b560f1fc4529b3e3a1b84477d1c0d8292f'),
 (2, 'Ruben', 3, 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413'),
-(3, 'Luis', 5, 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413'),
+(3, 'Luis', 2, 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413'),
 (4, 'Admin', 1, 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id_venta` int(11) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nro_mesa` varchar(50) NOT NULL,
+  `consumo` varchar(500) NOT NULL,
+  `metodo_pago` varchar(100) NOT NULL,
+  `prod_consumidos` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id_venta`, `fecha`, `nro_mesa`, `consumo`, `metodo_pago`, `prod_consumidos`) VALUES
+(1, '2019-02-19 12:50:54', '2', '345', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(2, '2019-02-19 12:51:19', '1', '403.75', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(3, '2019-02-19 17:07:02', '3', '655', 'Tarj Débito', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(4, '2019-02-19 17:56:37', '4', '111', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(5, '2019-02-19 17:57:53', '12', '235', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(6, '2019-02-19 17:58:43', '3', '75', 'Efectivo', 'Prueba de productos'),
+(7, '2019-02-19 17:59:14', '3', '150', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(8, '2019-02-19 18:32:23', '1', '300', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(9, '2019-02-19 18:45:55', '3', '495', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(10, '2019-02-19 18:46:33', '1', '340', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(11, '2019-02-19 18:47:39', '2', '445', 'Efectivo', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(12, '2019-02-19 18:51:09', '2', '935.75', 'Tarj Crédito', 'Pizza Napolitana x 2<br>Flan casero x 3<br>Agua mineral 500cc x 1<br>Coca cola 500cc x 2<br>Empanada x 3<br>'),
+(13, '2019-02-19 19:48:36', '1', '255', 'Efectivo', 'Budin de pan x 1<br>Agua mineral 500cc x 1<br>Empanada x 1<br>'),
+(14, '2019-02-19 19:51:16', '1', '225', 'Efectivo', 'Fernet x 1<br>Flan casero x 1<br>'),
+(15, '2019-02-19 19:52:10', '3', '350', 'Tarj Débito', 'Flan casero x 2<br>Pizza Muzarella x 1<br>');
 
 --
 -- Índices para tablas volcadas
@@ -359,6 +386,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id_venta`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -366,7 +399,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `caja`
 --
 ALTER TABLE `caja`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
@@ -396,13 +429,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `temporal`
 --
 ALTER TABLE `temporal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
