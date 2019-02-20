@@ -5,8 +5,7 @@ $titulo = "Ingresar"
 
 <body class="d-flex justify-content-center align-items-center">
 	
-	<div class="body-login d-flex justify-content-center align-items-center">
-		<div class="gradient"></div>
+	<div class="bg d-flex justify-content-center align-items-center">
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="login" class="contenedor-login">
 		
 			<img class="mb-4 mt-4" src="public/img/logo.png" alt="logo">

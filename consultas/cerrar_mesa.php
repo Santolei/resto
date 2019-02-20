@@ -36,6 +36,20 @@
 
 	$total_con_descuento = ($subtotal_mesa - $subtotal);
 
+	// --------------------------------- //
+	// Traigo los productos consumidos
+	// --------------------------------- //
+	$prod_consumidos = $con->prepare("
+		SELECT * 
+		FROM temporal
+		WHERE nro_mesa = $nro_mesa 
+		");
+	$prod_consumidos->execute();
+	$productos_consumidos = $prod_consumidos->fetchAll();
+	foreach ($productos_consumidos as $producto_consumido) {
+		$nombreprod .= $producto_consumido['producto'] . ' x ' . $producto_consumido['cantidad'] . '<br>';
+	}
+
 	/*
 	|--------------------------------------------------------------------------
 	| Inserto los datos en la Caja
@@ -53,6 +67,26 @@
 		':anio' => date('Y'),
 		':mes' => mes(),
 		':dia' => date('Y-m-d')
+	));
+
+	/*
+	|--------------------------------------------------------------------------
+	| Inserto los datos en la tabla de ventas
+	|--------------------------------------------------------------------------
+	*/
+
+	$datosventas = $con->prepare('
+		INSERT INTO ventas (nro_mesa,consumo,metodo_pago,prod_consumidos) 
+		VALUES(:nro_mesa, :consumo, :metodo_pago, :prod_consumidos)
+		');
+
+
+
+	$datosventas->execute(array(
+		':nro_mesa' => $nro_mesa ,
+		':consumo' => $_POST['monto'] ,
+		':metodo_pago' => $_POST['metodo'],
+		':prod_consumidos' => $nombreprod
 	));
 
 	/*

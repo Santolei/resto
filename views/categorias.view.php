@@ -51,12 +51,11 @@
                                             <td class="text-center"><a href="editar_categoria.php?id=<?php echo $categoria['id_categoria'] ?>"><i class="fa fa-pencil"></i></a></td>
                                             <td class="text-center"><a data-toggle="modal" data-target="#modalConfirmDelete<?php echo $categoria['id_categoria']; ?>"><i class="fa fa-trash text-danger"></i></a></td>
                                         </tr>
+                                        <?php include "modals/modal_borrar_categoria.php" ?>
                                     <?php endforeach ?>
                                 </tbody>
                             </table>
-                            <!-- Modals -->
-                            <?php include "modals/modal_edit_categoria.php" ?>
-                            <?php include "modals/modal_borrar_categoria.php" ?>
+                            
                         </div>
             
                     </div>

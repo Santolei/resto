@@ -95,13 +95,24 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="card admin-card mb-2 d-flex align-items-center justify-content-center text-center">
+                        
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapse-ventas" aria-expanded="false" aria-controls="collapse-ventas" style="width: 200px">
+                             Últimas ventas <div class="fa fa-angle-down"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row collapse" id="collapse-ventas">
                     <div class="col-12">
                         <div class="card p-4">
                             <h4 class="text-center titulo-seccion">Últimas ventas</h4>
 
                             <table style="width:100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_ingresos">
                                 <thead class="tabla-thead white-text">
-                                    <th>ID</th>
+                                    <th>Detalle</th>
                                     <th>Fecha</th>
                                     <th>Monto</th>
                                     <th>Método de pago</th>
@@ -137,6 +148,15 @@
             "ajax": "consultas/caja_json.php",
             "order": [[ 0, 'desc' ], [ 1, 'asc' ]],
             "searching": false,
+            "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+            $('td:eq(2)', nRow).html('$' + aData[2]);
+            return nRow;
+            },
+            "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+            $('td:eq(0)', nRow).html('<a href="detalle_venta.php?id=' + aData[0] + '">' +
+                'Ver detalle' + '</a>');
+            return nRow;
+            },
             "language": {
               "url": "public/js/addons/datatablesspanish.json"
             }
