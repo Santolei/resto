@@ -59,5 +59,8 @@
             <li><a href="#" id="btn-menu-configuracion"">Configuracion</a></li> -->
         </ul>
     </div>
-        
+         <div class="sidebar-copyright mb-2">
+             © <?php echo date('Y'); ?> Desarrollo:
+                <a href="http://www.neomicron.com.ar/" target="_blank"> Neomicron </a>
+         </div>
 </div>
