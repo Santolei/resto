@@ -18,11 +18,11 @@
         <form action="consultas/add_user.php" id="form-add-user" method="POST">
           <div class="form-group">
             <label for="nombre">Nombre del usuario:</label>
-            <input class="form-control" type="text" name="nombre" id="nombre" autocomplete="off" required>
+            <input class="form-control" type="text" name="nombre" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="rol">Rol:</label>
-            <select class="form-control" name="rol" id="rol" selected="Seleccionar Rol" required>
+            <select class="form-control" name="rol" selected="Seleccionar Rol" required>
               <option value="">Seleccionar rol</option>
               <?php foreach ($roles as $rol): ?>
                 <option value="<?php echo $rol['id'] ?>"><?php echo $rol['rol'] ?></option>
@@ -33,7 +33,7 @@
             <label for="password">Contraseña:</label>
               <input class="form-control" type="password" name="password" id="password">
               <div class="valid-feedback">
-                Looks good!
+                Perfecto!
               </div>
           </div>
 

@@ -15,7 +15,7 @@
 
       <!--Body-->
       <div class="modal-body">
-        <form action="consultas/add_categoria.php" id="form-add-producto" method="POST">
+        <form action="consultas/add_categoria.php" method="POST">
           <div class="form-group">
             <label for="nombre">Nombre de la categoría:</label>
             <input class="form-control" type="text" name="nombre_categoria" id="nombre_categoria" autocomplete="off" required>

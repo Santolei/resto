@@ -67,9 +67,9 @@
         <div class="container-fluid mt-5">
             <div class="row"><!--Grid row-->
             <div class="output_message"></div>
-                <?php if ($date === '01-01-1970'): ?>
+                <?php if (!$cuenta): ?>
                     <!-- Central Modal Medium Danger -->
-                    <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);">
+                    <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%); width: 100%; max-width: 350px;">
                       <div class="modal-dialog modal-notify modal-danger" role="document">
                         <!--Content-->
                         <div class="modal-content">
@@ -91,6 +91,7 @@
                           <!--Footer-->
                           <div class="modal-footer justify-content-center">
                             <a type="button" class="btn btn-danger" href="index.php">Volver al inicio<i class="fa fa-reply-all ml-1 text-white"></i></a>
+                            <a href="consultas/cerrar_mesa_vacia.php?id=<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
                           </div>
                         </div>
                         <!--/.Content-->
@@ -198,7 +199,7 @@
                                 <div class="separador-ticket mt-2"></div>
 
                                 <div class="d-flex flex-column align-items-center">
-                                    <div class="mozo mt-2">MOZO: SANTIAGO </div>
+                                    <div class="mozo mt-2">Atendido por: <?php echo $mozo ?> </div>
                                     
                                     <div class="footer-ticket-iva"> <strong>**(IVA INCLUIDO EN PRECIOS)**</strong></div>
 
@@ -309,10 +310,13 @@
                                     
                                     <?php include "modals/modal_descuento.php" ?>
                                 </div>
-                                <div class="d-flex button-descuento">
-                                    <a data-toggle="modal" data-target="#modalCerrarMesa<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
-                                    <?php include "modals/modal_cerrar_mesa.php" ?>
-                                </div>
+                                 <?php if ($usuario_logueado['rol'] == 1 or $usuario_logueado['rol'] == 2): ?>
+                                    <div class="d-flex button-descuento">
+                                        <a data-toggle="modal" data-target="#modalCerrarMesa<?php echo $nro_mesa ?>" class="btn btn-danger">Cerrar Mesa</a>
+                                        <?php include "modals/modal_cerrar_mesa.php" ?>
+                                    </div>
+                                <?php endif ?>
+                                
                             </div>
                 
                         </div>
@@ -335,11 +339,20 @@
     <!-- Scripts -->
 
     <script>
-        $('#imprimir').click(function(){
-            print();
+        // $('#imprimir').click(function(){
+        //     print();
+        // });
+
+        $(document).ready(function() {
+
+            $('#imprimir').on('click',function(){
+                $.ajax({
+                        url:   "imprimir_factura/index.php?id=<?php echo $nro_mesa ?>", //archivo que recibe la peticion
+                        type:  'post'
+                });  
+            });
         });
 
-        // AJAX DESCUENTO
 
         
     </script>

@@ -1,51 +1,4 @@
 <?php require_once 'head.php';?>
-
-<style>
-    
-    @media print {
-        body { 
-            color: #000;
-            font: 100%/150%; 
-        }
-        #form-add-productos,
-        .imprimir-comanda,
-        .nro_mesa,
-        .izq,
-        .precio,
-        .total,
-        .precio-comanda,
-        .ocultar {
-            display: none;
-        }
-        .card-body {
-            width:400px;
-        }
-        table.table-sm td, table.table-sm th{
-            padding-top:.5em;
-            padding-bottom: .5em;
-        }
-
-        .comanda-impresa {
-            position: absolute;
-            top: 0;
-        }
-        .titulo-comanda,
-        .comanda-impresa .separador-ticket {
-            display: block;
-        }
-        .print-derecha {
-            float: right;
-        }
-        .table thead th,
-        .table td,
-        table.table td{
-            border: none;
-            padding:0;
-            padding-top: .1em;
-        }
-    }
-</style>
-
 <script src="public/js/ajax_jquery.min.js"></script>
 
 <body class="bg">
@@ -65,7 +18,7 @@
 
     <!--Main layout-->
     <main class="pt-5">
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-2 mt-lg-5">
             <div class="row"><!--Grid row-->
                 <!--Grid column-->
 
@@ -87,47 +40,56 @@
                             <hr class="mdb-color lighten-3">  
                             <div class="row d-flex justify-content-center">
 
-                               <form id="form-add-productos" method="POST" action="consultas/pedido_mesa.php">
+                               <form class="w-100" id="form-add-productos" method="POST" action="consultas/pedido_mesa.php">
                                   <!-- -----------  BUSCADOR  ----------- -->
                                   <input type="text" class="form-control grey lighten-4 mt-2" name="buscar" autocomplete="off" autofocus onkeyup="buscar_ajax(this.value);" placeholder="Buscar por nombre de producto">
                                   <div id="mostrar" class="mt-2 mb-2 d-flex flex-column justify-content-center">
                                       
                                   </div>
+
+                                  <div class="d-flex flex-column flex-lg-row flex-wrap mb-3">
+                                        <?php foreach ($lista_categorias as $categoria): ?>
+                                          <a class="btn btn-primary btn-categorias" data-toggle="modal" data-target="#productos_por_cat_<?php echo $categoria['nombre']; ?>"><?php echo $categoria['nombre'] ?></a>
+                                          <?php include 'modals/modal_productos_por_cat.php' ?>
+                                        <?php endforeach ?>
+                                  </div>
                                     
-                                    <input type="text" name="producto" class="form-control" required>
-                                    <input type="hidden" name="nro_mesa" value="<?php echo $nro_mesa ?>">
-                                    <input type="hidden" name="id_producto">
-                                    <div class="row mt-2">
-                                        <div class="col-md-6">
-                                            <label>Cantidad</label>
-                                            <input type="text" class="form-control" id="cantidad" name="cantidad" required>
+                                    <div class="d-none">
+                                        <input type="text" name="producto" class="form-control" required>
+                                        <input type="hidden" name="nro_mesa" value="<?php echo $nro_mesa ?>">
+                                        <input type="hidden" name="id_producto">
+                                        <input type="hidden" name="mozo" value="<?php echo $usuario_login ?>">
+                                        <div class="row mt-2">
+                                            <div class="col-md-6">
+                                                <label>Cantidad</label>
+                                                <input type="text" class="form-control" id="cantidad" name="cantidad" required>
+                                            </div>
+                                            
+                                            <div class="col-md-6">
+                                                <label>Precio unitario</label>
+                                              <input type="text" class="form-control" id="precio" name="precio" required>
+                                            </div>
+                                            
                                         </div>
-                                        
-                                        <div class="col-md-6">
-                                            <label>Precio unitario</label>
-                                          <input type="text" class="form-control" id="precio" name="precio" required>
+                                        <div class="form-group mt-2">
+                                            <label for="comentarios">Comentarios</label>
+                                            <textarea name="comentarios" id="comentarios" cols="30" class=" form-control"></textarea>
                                         </div>
-                                        
+                                                                        
+                                        <?php if (!empty($errores)): ?>
+                                          <div class="error alert alert-danger mt-3">
+                                            <ul class="d-flex justify-content-center align-items-center ">
+                                              <?php echo $errores ?>
+                                            </ul>
+                                          </div>
+                                        <?php endif ?>
                                     </div>
-                                    <div class="form-group mt-2">
-                                        <label for="comentarios">Comentarios</label>
-                                        <textarea name="comentarios" id="comentarios" cols="30" class=" form-control"></textarea>
-                                    </div>
-                                
-                                    <?php if (!empty($errores)): ?>
-                                      <div class="error alert alert-danger mt-3">
-                                        <ul class="d-flex justify-content-center align-items-center ">
-                                          <?php echo $errores ?>
-                                        </ul>
-                                      </div>
-                                    <?php endif ?>
                                 
 
                                   <!-- ----------- FIN BUSCADOR  ----------- -->
 
                                     <div class="mt-2">
-                                    <a class="btn stylish-color-dark waves-effect waves-light" href="index.php"><i class="fa fa-reply-all"></i> Volver </a>
-                                    <button type="submit" id="add_productos" class="btn btn-success" name="submit">Agregar</button>
+                                    <a class="btn btn-secondary purple-gradient waves-effect waves-light" href="index.php"><i class="fa fa-reply-all"></i> Volver a las mesas </a>
                                   </div>
                                 </form>  
                                 
@@ -153,7 +115,7 @@
                                     <h5 class=" mb-sm-0 pt-1">
                                         <span>Imprimir Comanda: </span>
                                     </h5>
-                                    <a class="btn btn-primary" id="imprimir" >Imprimir</a>
+                                    <a class="btn btn-primary" id="imprimir">Imprimir</a>
                                 </div>
                             </div>
                         
@@ -200,6 +162,7 @@
                                       <th class="print-derecha" scope="col">Cantidad</th>
                                       <th class="ocultar" scope="col precio">Precio</th>
                                       <th class="ocultar" scope="col total">Total</th>
+                                      <th class="ocultar" scope="col comentario"></th>
                                       <th class="ocultar" scope="col Eliminar"></th>
                                     </tr>
                                   </thead>
@@ -211,9 +174,14 @@
                                           <td class="print-derecha"><?php echo $pedido['cantidad']; ?></td>
                                           <td class="ocultar"><?php echo $pedido['precio']; ?></td>
                                           <td class="ocultar"><?php echo $pedido['total']; ?></td>
+                                          <td class="ocultar text-center"><a data-toggle="modal" data-target="#modal_add_comentario<?php echo $pedido['id']; ?>"> <i class="fa fa-comment-o fa-2x"></i></a></td>
                                           <td class="ocultar text-center"><a data-toggle="modal" data-target="#modal_borrar_pedido<?php echo $pedido['id']; ?>"> <i class="fa fa-times fa-2x text-danger"></i></a></td>
                                         </tr>
+
+                                        <!-- Agrego los modales de borrar pedido y agregar comentario -->
+
                                         <?php include 'modals/modal_borrar_pedido.php' ?>
+                                        <?php include 'modals/modal_add_comentario.php' ?>
                                         
                                     <?php endforeach ?>
                                         <div class="d-flex justify-content-between">
@@ -291,10 +259,14 @@
         $('input[name="id_producto"]').val($(this).attr('data-id'));
     });
 
-        
-    $('#imprimir').click(function(){
-        print();
-    });
+        $(".btn-productos-menu").on('click', function () {
+            $('input[name="producto"]').val($(this).attr('data-producto'));
+            $('input[name="cantidad"]').val(1);
+            $('input[name="precio"]').val($(this).attr('data-precio'));
+            $('input[name="id_producto"]').val($(this).attr('data-id'));
+            $('#form-add-productos').trigger('submit');
+            
+        });
 
     // prueba
 
@@ -306,16 +278,10 @@
                 method: form.attr('method'),
                 data: form.serialize(),
                 success: function(){
-                    $('.output_message').html('<div class="modal-success fadeIn slower d-flex flex-column align-items-center" ><h5 class="text-center mb-4">¡Excelente!</h5><p class=" mb-2">Producto Agregado</p> <i class="fa fa-check fa-4x"></i></div>'); 
-                    setTimeout(function(){
-                      $('.output_message').addClass("animated fadeOut");
-                      location.reload();
-                    }, 2000);
-                    setTimeout(function(){
-                      
-                      location.reload();
-                    }, 1000); 
                     
+                    setTimeout(function(){
+                      location.reload();
+                    });
                 }
             });
              
@@ -323,4 +289,22 @@
             return false;   
         });
 
+
+
+    </script>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('#imprimir').on('click',function(){
+                $.ajax({
+                        url:   "imprimir_comanda/index.php?id=<?php echo $nro_mesa ?>", //archivo que recibe la peticion
+                        type:  'post'
+                });  
+            });
+        });
+
+
+        
     </script>

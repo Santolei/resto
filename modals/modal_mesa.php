@@ -9,25 +9,21 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="consultas/abrir_mesa.php?id=<?php echo $mesa['nro_mesa'] ?>" method="POST" id="modal-mesa">
+        <form action="consultas/abrir_mesa.php?id=<?php echo $mesa['nro_mesa'] ?>" method="POST" id="modal-mesa<?php echo $mesa['nro_mesa'] ?>">
         	<?php if ($mesa['estado'] === 'Disponible'): ?>
-        		<div class="custom-control custom-checkbox">
-				    <input type="checkbox" class="custom-control-input" id="abrirMesa<?php echo $mesa['nro_mesa'] ?>" name="abrirMesa" value="Ocupada">
-				    <input type="hidden" name="nro_mesa" value="<?php echo $mesa['nro_mesa'] ?>" />
-
-				    <label class="custom-control-label" for="abrirMesa<?php echo $mesa['nro_mesa'] ?>">Abrir mesa</label>
-
-            <div class="badge badge-success pull-right"> Mesa disponible</div>
-				</div>
+        		<div class="d-flex justify-content-between align-items-center">
+  				    <a class="logo-wrapper waves-effect">
+                  <img src="public/img/logo.png" style="width:100px;" alt="">
+              </a>
+              <input type="hidden" name="nro_mesa" id="numeroDeMesa<?php echo $mesa['nro_mesa']?>" value="<?php echo $mesa['nro_mesa'] ?>" />
+              <div class="badge badge-success pull-right p-2"> Mesa disponible</div>
+  				</div>
         	<?php endif ?>
 
     			<?php if ($mesa['estado'] === 'Ocupada'): ?>
     				<div class="custom-control custom-checkbox">
-    				    <input type="checkbox" class="custom-control-input" id="cerrarMesa<?php echo $mesa['nro_mesa'] ?>" name="cerrarMesa" value="Disponible">
-    				    <input type="hidden" name="nro_mesa" id="numeroDeMesa" value="<?php echo $mesa['nro_mesa'] ?>" />
-
-    				    <label class="custom-control-label" for="cerrarMesa<?php echo $mesa['nro_mesa'] ?>"><input type="checkbox" class="custom-control-input" id="cerrarMesa<?php echo $mesa['nro_mesa'] ?>" name="cerrarMesa" value="Disponible">Cerrar mesa</label>
-                <div class="badge badge-danger pull-right"> Mesa Ocupada</div>
+    				    <input type="hidden" name="nro_mesa" id="numeroDeMesa<?php echo $mesa['nro_mesa']?>" value="<?php echo $mesa['nro_mesa'] ?>" />
+                <div class="badge badge-danger pull-right p-2"> Mesa Ocupada</div>
     				</div>
 
             <hr>
@@ -39,8 +35,13 @@
     			<?php endif ?>
 
     			<div class="modal-footer pl-0 pr-0 d-flex flex-column-reverse flex-sm-row justify-content-center mt-4">
-            <button type="button" class="btn purple-gradient w-100 mr-0" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary w-100" name="submit">Guardar Datos</button>
+              <button type="button" class="btn purple-gradient w-100" data-dismiss="modal">Cerrar</button>
+            <?php if ($mesa['estado'] === 'Disponible'): ?>
+              <button type="submit" class="btn btn-primary w-100" name="submit">Abrir Mesa</button>
+            <?php endif ?>
+            <?php if ($mesa['estado'] === 'Ocupada'): ?>
+              
+            <?php endif ?>
           </div>
         </form>
       </div>

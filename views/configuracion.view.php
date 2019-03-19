@@ -18,10 +18,19 @@
         <!--Main layout-->
         <main id="main" class="pt-5">
             <div class="container-fluid mt-4 pt-2">
-                    <div class="card mb-4 d-flex justify-content-center text-center">
+                <div class="card mb-4 d-flex justify-content-center text-center">
                     <h4 class="m-4">
                         <strong class="titulo-seccion">Configuración</strong>
                     </h4>
+                </div>
+
+                <div class="card mb-4 d-flex justify-content-center text-center">
+                    <h6 class="mt-4 mb-2">
+                        <i class="fa fa-exclamation-circle"></i><strong> Consejo:</strong> Es recomendable hacer un respaldo de la base de datos al menos una vez por semana.
+                    </h6>
+                    <div class="text-center mb-2">
+                        <a class="btn btn-primary" href="backups"><i class="fa fa-cloud-download"></i> Descargar base de datos</a>
+                    </div>
                 </div>
                 
                     <div class="row">
@@ -59,7 +68,7 @@
                                                     <input type="text" name="telefono" class="form-control mb-2 col-6" value="<?php echo $telefono ?>">
                                                 </div>
                                                 <div class="d-flex justify-content-center align-items-center">
-                                                    <label for="cuit" class="col-6">Cuit/Cuil:</label>
+                                                    <label for="cuit" class="col-6">Cuit:</label>
                                                     <input type="text" name="cuit" class="form-control mb-2 col-6" value="<?php echo $cuit ?>">
                                                 </div>
                                                 <div class="d-flex justify-content-center align-items-center">

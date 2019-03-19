@@ -19,7 +19,7 @@ if (!$con) {
 		");
 
 	$statement->execute();
-	header("Location: ../inventario.php");
+	header("Location: ../categorias.php");
 }
 
 		

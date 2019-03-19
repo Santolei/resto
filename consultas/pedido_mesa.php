@@ -6,10 +6,11 @@ require '../config/conexion.php';
 
 // --------------------------------- //
 // --------------------------------- //
-
+$mozo = $_POST['mozo'];;
 $nro_mesa = $_POST['nro_mesa'];
 $producto = $_POST['producto'];
 $id_producto = $_POST['id_producto'];
+$categoria = $_POST['categoria'];
 $cantidad = $_POST['cantidad'];
 $precio = $_POST['precio'];
 $comentarios = $_POST['comentarios'];
@@ -46,7 +47,6 @@ if (!$con) {
 				$id_producto_tabla = $pedido['id_producto'];
 				$nuevo_total = $pedido['total'];
 				$comentarios_tabla = $pedido['comentarios'];
-				print_r($comentarios);
 
 				if ($id_producto_tabla === $id_producto) {
 					
@@ -76,18 +76,20 @@ if (!$con) {
 					// inserto una nueva fila
 					// PROBLEMATICO
 					$statement3 = $con->prepare("
-						INSERT INTO temporal (nro_mesa,producto, id_producto,cantidad,precio,total, comentarios) 
-						VALUES (:nro_mesa, :producto, :id_producto, :cantidad, :precio, :total, :comentarios)
+						INSERT INTO temporal (nro_mesa,producto, id_producto, categoria,cantidad,precio,total, comentarios, mozo) 
+						VALUES (:nro_mesa, :producto, :id_producto, :categoria, :cantidad, :precio, :total, :comentarios, :mozo)
 						
 						");
 						$statement3->execute(array(
 							':nro_mesa' => $nro_mesa,
 							':producto' => $producto,
 							':id_producto' => $id_producto,
+							':categoria' => $categoria,
 							':cantidad' => $cantidad,
 							':precio' => $precio,
 							':total' => $total,
-							':comentarios' => $comentarios
+							':comentarios' => $comentarios,
+							':mozo' => $mozo
 						));
 						if ($contador > 0) {
 							$delete = $con->prepare("
@@ -113,17 +115,19 @@ if (!$con) {
 				// ESTA PARTE ESTA BIEN
 			
 				$statement4 = $con->prepare("
-					INSERT INTO temporal (nro_mesa,producto, id_producto,cantidad,precio,total, comentarios) 
-					VALUES (:nro_mesa, :producto, :id_producto, :cantidad, :precio, :total, :comentarios)
+					INSERT INTO temporal (nro_mesa,producto,id_producto,categoria,cantidad,precio,total, comentarios, mozo) 
+					VALUES (:nro_mesa, :producto, :id_producto, :categoria, :cantidad, :precio, :total, :comentarios, :mozo)
 				");
 					$statement4->execute(array(
 						':nro_mesa' => $nro_mesa,
 						':producto' => $producto,
 						':id_producto' => $id_producto,
+						':categoria' => $categoria,
 						':cantidad' => $cantidad,
 						':precio' => $precio,
 						':total' => $total,
-						':comentarios' => $comentarios
+						':comentarios' => $comentarios,
+						':mozo' => $mozo
 					));
 					echo("Se ejecutó statement 4");
 		}

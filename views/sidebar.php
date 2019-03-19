@@ -6,56 +6,65 @@
 
  ?>
 
-<div class="sidebar-fixed position-fixed animated">
-    <a class="logo-wrapper waves-effect">
-        <img src="public/img/logo.png" class="img-fluid" alt="">
+<div class="sidebar-fixed position-fixed animated white-text">
+    <a class="logo-wrapper waves-effect" href="index.php">
+        <img src="<?php echo $logo ?>" class="img-fluid" alt="">
     </a>
 
-    <div class="list-group list-group-flush">
-        <a href="index.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_index)){echo $active_index;}?>">
-            <i class="fa fa-pie-chart mr-3"></i>Mesas
-        </a>
-        <!-- Muestro esta parte del menu al administrador  -->
-        <?php if ($usuario_logueado['rol'] != 1): ?>
-        <?php else: ?>
-            <a href="inventario.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_inventario)){echo $active_inventario;}?>">
-                <i class="fa fa-table mr-3"></i>Inventario 
-            </a>
-        <?php endif ?>
-        <!-- Muestro esta parte del menu al administrador o al cajero -->
-        <?php if ($usuario_logueado['rol'] != 1): ?> 
+    
+        <!-- PRUEBA DE MENU -->
+        <ul class=" list-group list-group-flush" id="myTab" role="tablist">
+            <li class="nav-item p-0">
+                <a class="nav-link list-group-item list-group-item-action waves-effect active  m-0" id="home-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=home" role="tab" aria-controls="home"
+                  aria-selected="true"><i class="fa fa-pie-chart mr-3"></i>Mesas</a>
+            </li>
+
+            <!-- Muestro esta parte del menu al administrador  -->
+            <?php if ($usuario_logueado['rol'] != 1): ?>
+            <?php else: ?>
+                <li class="nav-item p-0">
+                    <a class="nav-link list-group-item list-group-item-action waves-effect m-0" id="inventario-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=inventario" role="tab" aria-controls="inventario"
+                      aria-selected="false"><i class="fa fa-table mr-3"></i>Inventario</a>
+                </li>
+            <?php endif ?>
+            <!-- Muestro esta parte del menu al administrador o al cajero -->
+            <?php if ($usuario_logueado['rol'] != 1): ?> 
+                
+            <?php else: ?>
+                <li class="nav-item p-0">
+                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="caja-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=caja" role="tab" aria-controls="caja"
+                      aria-selected="false"><i class="fa fa-money mr-3"></i>Caja</a>
+                </li>
+            <?php endif ?>
+
+            <?php if ($usuario_logueado['rol'] != 1): ?> 
+            <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="usuarios-tab"  href="http://192.168.0.20<?php echo RUTA?>index.php?view=usuarios" role="tab" aria-controls="usuarios"
+                      aria-selected="false"><i class="fa fa-user mr-3"></i>Usuarios</a>
+                </li>
+            <?php endif ?>      
             
-        <?php else: ?>
-            <a href="caja.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_caja)){echo $active_caja;}?>">
-                <i class="fa fa-money mr-3"></i>Caja
-            </a>
-        <?php endif ?>
+            
+            <li class="nav-item">
+                <a class="nav-link list-group-item list-group-item-action waves-effect" id="pedidos-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=pedidos" role="tab" aria-controls="pedidos"
+                  aria-selected="false"><i class="fa fa-pencil mr-3"></i>Pedidos</a>
+            </li>
 
-        <?php if ($usuario_logueado['rol'] != 1): ?> 
-        <?php else: ?>
-            <a href="usuarios.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_usuarios)){echo $active_usuarios;}?>">
-                <i class="fa fa-user mr-3"></i>usuarios
-            </a>
-        <?php endif ?>      
-        
-        
-        <a href="pedidos.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_pedidos)){echo $active_pedidos;}?>">
-            <i class="fa fa-pencil mr-3"></i>Pedidos
-        </a>
-
-        <?php if ($usuario_logueado['rol'] != 1): ?> 
-        <?php else: ?>
-            <a href="configuracion.php" class="list-group-item list-group-item-action waves-effect <?php if (isset($active_configuracion)){echo $active_configuracion;}?>">
-            <i class="fa fa-cog mr-3"></i>Configuración
-        </a>
-        <?php endif ?>  
-        
-        <ul>
-    <!-- <li><a href="#" id="btn-menu-index">INDEX</a></li>
-    <li><a href="#" id="btn-menu-inventario">INventario</a></li>
-    <li><a href="#" id="btn-menu-caja">Caja</a></li>
-    <li><a href="#" id="btn-menu-configuracion"">Configuracion</a></li> -->
-</ul>
-    </div>
-
+            <?php if ($usuario_logueado['rol'] != 1): ?> 
+            <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="configuracion-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=configuracion" role="tab" aria-controls="configuracion"
+                      aria-selected="false"><i class="fa fa-cog mr-3"></i>Configuración</a>
+                </li>
+            <?php endif ?>  
+            <li class="nav-item">
+                <a class="list-group-item list-group-item-action waves-effect" href="logout.php"><i class="fa fa-sign-out mr-3"></i>Salir</a>
+            </li>
+        </ul>
+    
+         <div class="sidebar-copyright mb-2">
+             © <?php echo date('Y'); ?> Desarrollo:
+                <a href="http://www.neomicron.com.ar/" target="_blank"> Neomicron </a>
+         </div>
 </div>

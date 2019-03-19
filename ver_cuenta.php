@@ -3,8 +3,12 @@
 include 'inc/sessions.php';
 
 // --- Archivos de configuración y conexión a la Base de datos ---- //
-require 'config/config.php';
 require 'config/conexion.php';
+
+// Voy a traer los datos de roles y usuarios
+
+require_once 'consultas/roles.php';
+require_once 'consultas/usuarios.php';	
 
 // --------------------------------- //
 // --------------------------------- //
@@ -26,6 +30,11 @@ if (!$con) {
 	$statement->execute();
 	$cuenta = $statement->fetchAll();
 
+	if ($cuenta) {
+		$mozo = $cuenta[0]['mozo'];
+	}
+	
+
 	// --------------------------------- //
 	// Traigo la suma del total de la mesa 
 	// --------------------------------- //
@@ -42,12 +51,19 @@ if (!$con) {
 	// --------------------------------- //
 	// Traigo el descuento si lo hay 
 	// --------------------------------- //
+	
+	if (!isset($cuenta[0]['descuento'])) {
+		$descuento = 0;
 
-	$descuento = $cuenta[0]['descuento'];
+	} else{
+		$descuento = $cuenta[0]['descuento'];
+	}
+
 	$subtotal_mesa = $total_mesa[0];
 	$subtotal = ($subtotal_mesa * $descuento) / 100; 
 
 	$total_con_descuento = ($subtotal_mesa - $subtotal);
+	
 
 	// --------------------------------- //
 	// Traigo la fecha y hora 

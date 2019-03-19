@@ -1,6 +1,12 @@
 /* VARIOS */
 .fa-2x {
-  font-size: 1.8em;
+  font-size: 1.7em;
+}
+.fa-1-2x{
+  font-size: 1.2em;
+}
+.fa-1-5x{
+  font-size: 1.5em;
 }
 .titulo-seccion {
   font-weight: bold;
@@ -12,13 +18,29 @@
 .navbar a {
   color: #fafafa;
 }
-
+.nav-tabs {
+  color: #222;
+}
 /*BOTONES*/
 
 .btn-primary {
     background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
     background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
     background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+}
+
+.btn-productos-menu {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px){
+  .btn-categorias,
+  .btn-productos-menu {
+    width: 22%;
+    padding: .5em .2em;
+    font-size: .8em;
+  }
+   
 }
 .stylish-color-dark:hover{
   color: #fff;
@@ -27,13 +49,17 @@
 .bg {
   height: 100%;
   width: 100%;
-  background-image: url('../img/bg-login.jpg');
+  background-image: url('../img/bgdegradado.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   z-index: 1;
   position: relative;
+}
+
+.bg main {
+  height: 100vh;
 }
 
 /* BACKGROUND */
@@ -46,17 +72,24 @@
 
 .bg-gradient {
   position: absolute;
+  height: 100%;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
   opacity: 1;
-  background: -webkit-linear-gradient(45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
-  background: -o-linear-gradient(45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
-  background: linear-gradient(to 45deg, rgba(69, 104, 220, 0.9), rgba(176, 106, 179, 0.9) 100%);
+  background: transparent;
 }
 
+/* BOX */
+
+.box {
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
 
 .sidebar-fixed {
   height: 100vh;
@@ -74,10 +107,13 @@
     -webkit-border-radius: 8px;
     border-radius: 8px; 
   }
+  .list-group-item {
+    border-bottom: none;
+    }
   .list-group-item.active{
     border: none;
-
   }
+  li.nav-item {height: 48px;}
   .sidebar-fixed .logo-wrapper {
     padding: 2.5rem; }
     .sidebar-fixed .logo-wrapper img {
@@ -109,12 +145,11 @@
 
     /* MESAS DEL HOME */
 .mesa {
-  width: 140px !important;
-  max-width: 140px;
-  height: 140px !important;
+  width: 100px !important;
+  max-width: 100px;
+  height: 100px !important;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 2px 7px 0 rgba(0,0,0,.12);
-  background: url('../img/mesa.png');
   -webkit-background-size: 110px 110px;
   background-size: 110px 110px;
   background-position: 10px 9px;
@@ -129,9 +164,6 @@
 }
 
 .mesa .nro-mesa {
-  position: absolute;
-  top: 2px;
-  left: 2px;
   border-radius: 2px;
 }
 
@@ -314,7 +346,7 @@
 }
 
 .ganancia {
-  font-size: 1.7em;
+  font-size: 1.3em;
 }
 
 /* TABLAS */
@@ -405,3 +437,75 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
   box-shadow: 1px 1px 2px #222;
 }
 
+/* Input numérico del pedido para aumentar o reducir cantidad */
+.number-input input[type="number"] {
+  -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+          appearance: textfield;
+}
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.number-input {
+  /*margin-bottom: 3rem;*/
+}
+.number-input button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.number-input input[type=number] {
+  text-align: center;
+}
+.number-input.number-input {
+  border: 1px solid #ced4da;
+  width: 5.6rem;
+  border-radius: .25rem;
+}
+.number-input.number-input button {
+  width: 1.5rem;
+  height: .7rem;
+}
+.number-input.number-input button.minus {
+  padding-left: 10px;
+}
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+  width: .7rem;
+  background-color: #495057;
+}
+.number-input.number-input input[type=number] {
+  max-width: 2rem;
+  padding: .5rem;
+  border: 1px solid #ced4da;
+  border-width: 0 1px;
+  font-size: .8rem;
+  height: 2rem;
+  color: #495057;
+}
+
+/* MEDIA QUERIES VARIAS */
+.footer-copyright {
+    display: none;
+  }
+.sidebar-copyright {
+  position: absolute;
+  bottom: 0;
+}

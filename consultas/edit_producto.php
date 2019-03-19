@@ -30,8 +30,7 @@ if (!$con) {
 		");
 
 	$statement->execute();
-	echo ($id_producto.$nombre.$precio.$categoria.$stock);
-	header("Location: ../inventario.php");
+	header("Location: ../editar_producto.php?id=$id_producto");
 }
 
 		

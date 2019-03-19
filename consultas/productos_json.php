@@ -1,7 +1,4 @@
 <?php
-// --- Archivos de configuración y conexión a la Base de datos ---- //
-require '../config/config.php';
-require '../config/conexion.php';
 
 $query = $con->prepare ('SELECT * FROM productos');
 	$query->execute();
@@ -11,5 +8,5 @@ foreach ($list as $productos) {
 }
 
 // return the result in json
-echo json_encode($data);
+json_encode($data);
 ?>

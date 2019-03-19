@@ -8,7 +8,6 @@
 	}	
 
 	// --- Archivos de configuración y conexión a la Base de datos ---- //
-	require 'config/config.php';
 	require 'config/conexion.php';
 
 	// --------------------------------- //

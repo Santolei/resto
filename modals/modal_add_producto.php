@@ -15,7 +15,7 @@
 
       <!--Body-->
       <div class="modal-body">
-        <form action="consultas/add_producto.php" id="form-add-producto" method="POST">
+        <form action="consultas/add_producto.php" method="POST">
           <div class="form-group">
             <label for="nombre">Nombre del producto:</label>
             <input class="form-control" type="text" name="nombre" id="nombre" autocomplete="off" required>

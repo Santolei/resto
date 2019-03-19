@@ -12,8 +12,17 @@
 		$usuario_login = $_SESSION['usuario'];
 	}
 	// --- Archivos de configuración y conexión a la Base de datos ---- //
-	require 'config/config.php';
+	
 	require 'config/conexion.php';
+
+	// --- Consulta de productos y categorias ---- //
+	require 'consultas/productos.php';
+	require 'consultas/categorias.php';
+
+	// Traigo los datos de la tabla perfil, donde figuran los datos 
+	// del negocio del usuario
+
+	require 'consultas/perfil.php';
 
 	// --------------------------------- //
 	// --------------------------------- //
@@ -60,9 +69,6 @@
 	// --------------------------------- //
 	// Template de mesa.php
 	// --------------------------------- //
-	require 'views/mesa.view.php';
-
-
-
+	require 'views/mesa2.view.php';
 
  ?>

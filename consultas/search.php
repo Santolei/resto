@@ -1,7 +1,7 @@
 <?php 
 
 // --- Archivos de configuración y conexión a la Base de datos ---- //
-require '../config/config.php';
+
 require '../config/conexion.php';
 
 // --------------------------------- //
@@ -26,7 +26,7 @@ if (!$con) {
 			$categoria_producto = $producto['categoria'];
 
 			echo ("
-				<a class='agregar_product' data-id='$id_producto' data-nombre='$nombre_producto' data-precio='$precio_producto'>$nombre_producto</a>
+				<a class='agregar_product' data-id='$id_producto' data-nombre='$nombre_producto' data-categoria='$categoria_producto' data-precio='$precio_producto'>$nombre_producto</a>
 				");
 		}
 

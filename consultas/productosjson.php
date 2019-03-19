@@ -33,7 +33,8 @@ $columns = array(
     array( 'db' => 'nombre',  'dt' => 1 ),
     array( 'db' => 'precio',   'dt' => 2 ),
     array( 'db' => 'categoria',     'dt' => 3 ),
-    array( 'db' => 'stock',     'dt' => 4 )
+    array( 'db' => 'stock',     'dt' => 4 ),
+    array('db' => 'editar', 'dt' => 5 )
     
 );
  

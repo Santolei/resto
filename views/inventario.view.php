@@ -25,7 +25,7 @@
                 <div class="col-12 ">
             
                     <!--Card-->
-                    <div class="card">
+                    <div class="card tab-content">
             
                         <!-- INVENTARIO -->
                         <div class="card-body">
@@ -35,7 +35,7 @@
 
                             <div class="d-flex flex-column flex-sm-row justify-content-center mb-4">
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_producto">Agregar producto</a>
-                                <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_categoria">Agregar Categoría</a>
+                                <a class="btn btn-primary" href="categorias.php">Categorías</a>
                             </div>
                             <table style="width:100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_productos">
                                 <thead class="tabla-thead white-text">
@@ -44,6 +44,7 @@
                                     <th>Precio</th>
                                     <th>Categoría</th>
                                     <th>Stock</th>
+                                    <th>Editar</th>
                                 </thead>
                                 <tbody></tbody>
                             </table>
@@ -87,6 +88,11 @@
             "serverSide": true,
             autoFill: true,
             "ajax": "consultas/productosjson.php",
+            "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+            $('td:eq(5)', nRow).html('<a href="editar_producto.php?id=' + aData[5] + '">' +
+                '<i class="fa fa-pencil text-center"></i>' + '</a>');
+            return nRow;
+            },
             "language": {
               "url": "public/js/addons/datatablesspanish.json"
             }

@@ -15,15 +15,15 @@
 
       <!--Body-->
       <div class="modal-body">
-        <form action="consultas/edit_user.php" id="form-edit-user<?php echo $usuario['id_usuario']; ?>" method="POST">
+        <form action="<?php ECHO RUTA ?>consultas/edit_user.php?id=<?php echo $usuario['id_usuario']; ?>" id="form-edit-user<?php echo $usuario['id_usuario']; ?>" method="POST">
           <input type="hidden" name="id_usuario" value="<?php echo $usuario['id_usuario']; ?>">
           <div class="form-group">
             <label for="nombre">Nombre del usuario:</label>
-            <input class="form-control" type="text" name="editNombre" id="editNombre" value="<?php echo $usuario['nombre']; ?>" autocomplete="off" required>
+            <input class="form-control" type="text" name="editNombre" id="editNombre<?php echo $usuario['id_usuario']; ?>" value="<?php echo $usuario['nombre']; ?>" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="rol">Rol:</label>
-            <select class="form-control" name="rol" id="rol" selected="Seleccionar Rol" required>
+            <select class="form-control" name="rol" selected="Seleccionar Rol" required>
               <option value="">Seleccionar rol</option>
               <?php foreach ($roles as $edit_rol): ?>
                 <option value="<?php echo $edit_rol['id'] ?>"><?php echo $edit_rol['rol'] ?></option>

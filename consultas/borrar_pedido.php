@@ -8,7 +8,6 @@ require '../config/conexion.php';
 // --------------------------------- //
 // Traigo datos del formulario
 $id_pedido = $_GET['id'];
-$nro_mesa = $_GET['nro_mesa'];
 
 // --------------------------------- //
 // --------------------------------- //
@@ -25,6 +24,5 @@ if (!$con) {
 		");
 
 	$statement->execute();
-	header("Location: ../mesa.php?id=$nro_mesa");
 }		
 ?>

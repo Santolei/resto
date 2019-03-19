@@ -19,7 +19,7 @@
           <div class="form-group">
             <input type="hidden" name="id" value="<?php echo $pedido['id']; ?>">
             <label for="estado">Estado:</label>
-            <select class="form-control" name="estado" id="estado" selected="Seleccionar Estado" required>
+            <select class="form-control" name="estado" selected="Seleccionar Estado" required>
               <option value="">Seleccionar estado</option>
                 <option value="Pendiente">Pendiente</option>
                 <option value="Entregado">Entregado</option>
