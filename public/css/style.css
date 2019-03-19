@@ -8,6 +8,18 @@
 .fa-1-5x{
   font-size: 1.5em;
 }
+
+@media screen and (min-width: 550px){
+    .fa-1-5x{
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 990px){
+    .fa-1-5x{
+    font-size: 1.5em;
+  }
+}
+
 .titulo-seccion {
   font-weight: bold;
 }
@@ -276,6 +288,22 @@
 }
 .comentario-comanda:last-child {
   border: none;
+}
+
+/* HACIENDO PEDIDOS */
+
+#tabla-pedidos td {
+  vertical-align: middle;
+}
+
+.sumaryrestar{
+  width:80px;
+}
+
+a.borrarpedido,
+a.addcomment {
+  display: block;
+  height: 30px;
 }
 
 /* CONFIGURACION */

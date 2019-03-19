@@ -1,4 +1,4 @@
-<!--Modal: modalConfirmDelete-->
+<!--Modal: BORRAR PRODUCTO-->
 <div class="modal fade" id="modalConfirmDelete<?php echo $producto['id_producto']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
@@ -26,4 +26,4 @@
     <!--/.Content-->
   </div>
 </div>
-<!--Modal: modalConfirmDelete-->
+<!--Fin Modal: BORRAR PRODUCTO-->

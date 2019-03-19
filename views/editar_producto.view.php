@@ -45,11 +45,16 @@
 										<p><strong>Stock:</strong> <?php echo $producto['stock']; ?></p>
 									</div>
 
-                                	<a class="btn btn-primary" data-toggle="modal" data-target="#modal_edit_producto<?php echo $producto['id_producto']; ?>">Editar producto</a>
-
-                                    <a class="btn stylish-color-dark waves-effect waves-light" href="inventario.php"><i class="fa fa-reply-all"></i> Volver </a>
-                					
+                                	<div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <a class="btn btn-primary" data-toggle="modal" data-target="#modal_edit_producto<?php echo $producto['id_producto']; ?>">Editar producto</a>
+                                            <a class="btn stylish-color-dark waves-effect waves-light" href="inventario.php"><i class="fa fa-reply-all"></i> Volver </a>
+                                        </div>
+                                        
+                                        <a data-toggle="modal" data-target="#modalConfirmDelete<?php echo $producto['id_producto']; ?>"><i class="fa fa-trash fa-2x text-danger"></i></a>
+                                    </div>
                                     <?php include 'modals/modal_edit_producto.php' ?>
+                                    <?php include 'modals/modal_borrar_producto.php' ?>
                             </div>
                 
                         </div>
