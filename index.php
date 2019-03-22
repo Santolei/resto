@@ -76,10 +76,12 @@ require 'consultas/edit_cantidad_mesas.php';
 
 require 'consultas/edit_perfil.php';
 
+// Traigo usuarios
+
+require 'consultas/usuarios.php';
+
 // -- Template del index -- //
 require 'views/index.view.php';
-
-
 
 
  ?>

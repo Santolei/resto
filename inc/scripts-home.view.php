@@ -76,11 +76,12 @@
         }
     </script>
 
-    <?php if($exibirModal === true) : // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario. ?>
+    <!-- Esto viene de inc/sessions.php -->
+    <?php if($exibirModal === true AND $usuario_logueado[2] == 1) : 
+    // Si nuestra variable de control "$exibirModal" es igual a TRUE activa nuestro modal y será visible a nuestro usuario. ?>
     <script>
     $(document).ready(function()
     {
-      // id de nuestro modal
       $("#modalBackup").modal("show");
     });
     </script>
