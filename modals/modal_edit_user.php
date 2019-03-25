@@ -1,4 +1,4 @@
-<!-- Modal de agregar producto -->
+<!-- Modal de EDITAR USUARIO -->
 <div class="modal fade" id="modal_edit_user<?php echo $usuario['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-notify" role="document">
@@ -43,4 +43,4 @@
     <!--/.Content-->
   </div>
 </div>
-<!-- Central Modal Medium Info-->
+<!-- Fin modal EDITAR USUARIO-->

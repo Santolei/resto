@@ -209,6 +209,7 @@
                                         <th>Nombre</th>
                                         <th>Rol</th>
                                         <th>Editar</th>
+                                        <th>Borrar</th>
                                     </thead>
                                     <tbody >
                                         <?php foreach ($usuarios as $usuario): ?>
@@ -217,8 +218,10 @@
                                                 <td><?php echo $usuario['nombre'] ?></td>
                                                 <td> <?php echo roles($usuario['rol']) ?></td>
                                                 <td><a data-toggle="modal" data-target="#modal_edit_user<?php echo $usuario['id_usuario'] ?>"><i class="fa fa-edit fa-2x"></i></a></td>
+                                                <td><a data-toggle="modal" data-target="#modal_delete_user<?php echo $usuario['id_usuario'] ?>"><i class="fa fa-trash fa-2x"></i></a></td>
                                             </tr>
                                             <?php include "modals/modal_edit_user.php" ?>
+                                            <?php include "modals/modal_delete_user.php" ?>
                                         <?php endforeach ?>
                                     </tbody>
                                 </table>
