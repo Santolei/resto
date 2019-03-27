@@ -143,6 +143,25 @@
         });
     </script>
 
+    <!-- SCRIPTS DE USUARIOS -->
+
+    <script>
+        $('.btn-delete-user').on('click',function(){
+
+            var link = $(this);
+            id_usuario = link.attr('data-usuario');
+            $.ajax({
+                url: "consultas/borrar_usuario.php?id="+link.attr('data-usuario'),
+                success: function(){
+                    $('.modal_delete_user').modal('hide');
+                    alert("Usuario Borrado correctamente");
+                    console.log('usuario borrado');
+                }
+            });
+        }); 
+            
+    </script>
+
     <!-- scripts de caja -->
 
     <script>

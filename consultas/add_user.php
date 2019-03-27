@@ -37,7 +37,7 @@ if (!$con) {
 			':password' => $password
 		));
 
-		header("Location: ../usuarios.php");
+		header("Location: ../index.php");
 	}
 	
 }

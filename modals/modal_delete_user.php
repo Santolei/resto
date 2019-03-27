@@ -1,12 +1,13 @@
-<!--Modal: BORRAR USUARIO-->
-<div class="modal fade" id="modal_delete_user<?php echo $producto['id_producto']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!-- Modal: BORRAR USUARIO
+AGUANTE EL WOW VIEJA -->
+<div class="modal fade modal_delete_user" id="modal_delete_user<?php echo $usuario['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
     <!--Content-->
     <div class="modal-content text-center">
       <!--Header-->
       <div class="modal-header d-flex justify-content-center">
-        <p class="heading">¿Estás seguro que quieres borrar el usuario?</p>
+        <p class="heading">¿Estás seguro que quieres borrar el usuario <?php echo $usuario['nombre'] ?>?</p>
       </div>
 
       <!--Body-->
@@ -19,7 +20,7 @@
 
       <!--Footer-->
       <div class="modal-footer flex-center">
-        <a href="consultas/borrar_usuario.php?id=<?php echo $usuario['id_usuario']; ?>" class="btn btn-outline-danger">Si</a>
+        <a data-usuario="<?php echo $usuario['id_usuario']; ?>" class="btn btn-outline-danger btn-delete-user">Si</a>
         <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
       </div>
     </div>
