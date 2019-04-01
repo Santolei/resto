@@ -92,8 +92,8 @@
                             <?php include "modals/modal_add_categoria.php" ?>
                             
                             <!-- CAJA -->
-                            <div class="container pt-2 tab-pane fade p-0" id="caja" role="tabpanel" aria-labelledby="caja-tab">
-                                <div class="card mt-4 mb-4 d-flex justify-content-center text-center">
+                            <div class="container tab-pane fade p-0" id="caja" role="tabpanel" aria-labelledby="caja-tab">
+                                <div class="card mb-4 d-flex justify-content-center text-center">
                                     <h4 class="m-4">
                                         <strong class="titulo-seccion">Caja</strong>
                                     </h4>
@@ -171,6 +171,7 @@
                                             <a class="btn btn-primary" data-toggle="collapse" href="#collapse-ventas" aria-expanded="false" aria-controls="collapse-ventas" style="width: 200px">
                                              Últimas ventas <div class="fa fa-angle-down"></div>
                                             </a>
+                                            <a href="reportes.php" class="btn btn-primary">Reportes<i class="ml-2 fa fa-angle-right"></i></a>
                                         </div>
                                     </div>
                                 </div>

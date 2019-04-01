@@ -123,7 +123,8 @@ $printer->text("Tel: " . "$telefono"."\n");
 $printer->text("$date" . "               " . "$time" . "hs" . "\n");
 $printer->text("---------------------"."\n");
 $printer->setJustification(Printer::JUSTIFY_LEFT);
-$printer->text("CANT  DESCRIPCION" . "       " . "IMPORTE" . "\n");
+$line = sprintf("%s %10s %15s", "CANT", "DESCRIPCION", "IMPORTE");
+$printer->text("$line"  . "\n");
  
 /*
 	Ahora vamos a imprimir los
@@ -136,31 +137,32 @@ $total = 0;
 foreach ($pedidos as $pedido) {
 	/*Alinear a la izquierda para la cantidad y el nombre*/
 	$printer->setJustification(Printer::JUSTIFY_LEFT);
-	$printer->text($pedido['cantidad'] . "  " . $pedido['producto']  . "\n");
-	$printer->setJustification(Printer::JUSTIFY_RIGHT);
-	$printer->text("$".$pedido['total'] . "\n");
+	$columna1 = str_pad($pedido['cantidad'], 2, ' ', STR_PAD_LEFT);
+	$columna2 = str_pad($pedido['producto'], 2, ' ', STR_PAD_LEFT);
+	$printer->text($columna1 . $columna2);
+	$printer->text("\n");
 }
  
 /*
 	Terminamos de imprimir
 	los productos, ahora va el total
 */
-$printer->setJustification(Printer::JUSTIFY_CENTER);
-$printer->text("---------------------"."\n");
-$printer->setEmphasis(TRUE);
-$printer->text("Subtotal:" . "               " . "$"."$subtotal_mesa" . "\n");
-if ($descuento>0) {
-	$printer->text("Descuento:" . "                " . "$descuento" . "%" . "\n");
-	$printer->text("TOTAL:" . "                " . "$"."$total_con_descuento" . "\n");
-}
-else {
-	$printer->text("TOTAL:" . "                  " . "$"."$subtotal_mesa" . "\n");
-}
+// $printer->setJustification(Printer::JUSTIFY_CENTER);
+// $printer->text("---------------------"."\n");
+// $printer->setEmphasis(TRUE);
+// $printer->text("Subtotal:" . "               " . "$"."$subtotal_mesa" . "\n");
+// if ($descuento>0) {
+// 	$printer->text("Descuento:" . "                " . "$descuento" . "%" . "\n");
+// 	$printer->text("TOTAL:" . "                " . "$"."$total_con_descuento" . "\n");
+// }
+// else {
+// 	$printer->text("TOTAL:" . "                  " . "$"."$subtotal_mesa" . "\n");
+// }
 
-$printer->text("---------------------"."\n");
-$printer->text("**(IVA INCLUIDO EN PRECIOS)**"."\n");
-$printer->text("Comprobante no valido" . "\n" . "como factura"."\n");
-$printer->text("Gracias por su visita"."\n");
+// $printer->text("---------------------"."\n");
+// $printer->text("**(IVA INCLUIDO EN PRECIOS)**"."\n");
+// $printer->text("Comprobante no valido" . "\n" . "como factura"."\n");
+// $printer->text("Gracias por su visita"."\n");
  
 /*Alimentamos el papel 3 veces*/
 $printer->feed(3);

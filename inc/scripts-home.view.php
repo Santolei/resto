@@ -56,6 +56,12 @@
          $('#inventario-tab').addClass('active');
          $('#home-tab').removeClass('active');
         }
+        else if (window.location == caja){
+         $('#caja').addClass('active show');
+         $('#home').removeClass('active show');
+         $('#caja-tab').addClass('active');
+         $('#home-tab').removeClass('active');
+        }
         else if (window.location == usuarios){
          $('#usuarios').addClass('active show');
          $('#home').removeClass('active show');
