@@ -8,6 +8,7 @@
 .fa-1-5x{
   font-size: 1.5em;
 }
+.shadow-none{box-shadow: none !important;} 
 
 @media screen and (min-width: 550px){
     .fa-1-5x{
