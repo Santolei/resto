@@ -29,7 +29,7 @@
                     
                 <div class="card p-2">
                     <h5 class="titulo-seccion text-center">Reporte de ventas por fecha</h5>
-                    <form action="consultas/reporte-fecha.php" method="POST">
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="row">
                             <!-- DESDE -->
                             <div class="col-12 col-lg-6">
@@ -64,6 +64,41 @@
                         </div>
                     </form>
                 </div> 
+
+                <div class="card mt-4 mb-4 d-flex justify-content-center text-center">
+                    <?php if (!isset($ventas)): ?>
+                    <h5 class="m-4">
+                        <strong class="titulo-seccion">Aun no hay datos (Seleccione una fecha)</strong>
+                    </h5>
+                    <?php else: ?>
+                        <h5 class="m-4">
+                            <strong class="titulo-seccion">Total de ventas en las fechas indicadas:</strong>
+                            <br><br>
+                            <div class="m-auto col-12 col-md-6 alert alert-success"><strong class="titulo-seccion">$<?php echo $consumo ?></strong></div>
+                        </h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="tabla_productos">
+                                <thead class="stylish-color-dark white-text">
+                                    <th>ID</th>
+                                    <th>Fecha</th>
+                                    <th>N° mesa</th>
+                                    <th>Consumo</th>
+                                    <th>Detalle</th>
+                                </thead>
+                                <?php foreach ($ventas as $venta): ?>
+                                    <tr>
+                                        <td><?php echo $venta['id_venta']; ?></td>
+                                        <td><strong><?php echo $venta['fecha']; ?></strong></td>
+                                        <td><strong><?php echo $venta['nro_mesa']; ?></strong></td>
+                                        <td>$<?php echo $venta['consumo']; ?></td>
+                                        <td><a href="detalle_venta.php?id=<?php echo $venta['id_venta']; ?>">Ver detalle</a></td>
+                                    </tr>
+                                <?php endforeach ?>
+                            </table>
+                        </div>
+                    <?php endif ?>
+                    
+                </div>
                     
             </div>
             
@@ -94,7 +129,11 @@
             });
             $('#hasta').datetimepicker({
                 viewMode: 'years',
-                locale: 'es'
+                locale: 'es',
+                icons: {
+                    up: "fa fa-arrow-up blue-text shadow-none",
+                    down: "fa fa-arrow-down blue-text"
+                }
             });
         });
     </script>
