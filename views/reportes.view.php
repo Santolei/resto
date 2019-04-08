@@ -76,7 +76,7 @@
                         <h5 class="m-4 hidden">
                             <strong class="titulo-seccion">Total de ventas en las fechas indicadas:</strong>
                             <br><br>
-                            <div class="m-auto col-12 col-md-6 alert alert-success"><strong class="titulo-seccion"><div id="consumo"></div></strong></div>
+                            <div class="m-auto col-12 col-md-6 alert alert-success"><strong class="titulo-seccion"><div id="consumo">$</div></strong></div>
                         </h5>
                         <div class="table-responsive hidden">
                             <table class="table table-hover" id="tabla_productos">
@@ -134,27 +134,45 @@
         });
     </script>
 
+    <!-- CONSUMO TOTAL DEL PERIODO -->
+
+    <script type="text/javascript">
+
+        function mostrarConsumo(){
+            var desde = $('input[name="desde"]').val();
+            var hasta = $('input[name="hasta"]').val();
+            $.ajax({
+                url: "consultas/reporte-consumo.php?desde=" + desde +"&hasta=" +hasta,
+                method: 'GET',
+                success: function(response){
+                    $('#consumo').html(response);
+                }
+            });
+        }
+        
+        
+    </script>
+
     <script>
     
     $('#reporte').on('submit',function(){
-             
-             var form = $(this);
-             $.ajax({
-                url: form.attr('action'),
-                method: form.attr('method'),
-                data: form.serialize(),
-                 success: function(response){
-                    //Copiamos el resultado en #tabla-pedidos
-                    $('#tabla-ventas').html(response);
-                    $('#consumo').html("$consumo");
-                    $('#mensaje-error').hide();
-                    $('.hidden').show();
-                 }
-             });
-              
-             // Prevents default submission of the form after clicking on the submit button. 
-             return false;   
+         var form = $(this);
+         $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+             success: function(response){
+                //Copiamos el resultado en #tabla-pedidos
+                $('#tabla-ventas').html(response);
+                mostrarConsumo();
+                $('#mensaje-error').hide();
+                $('.hidden').show();
+             }
          });
+          
+         // Prevents default submission of the form after clicking on the submit button. 
+         return false;   
+     });
     </script>
     
 

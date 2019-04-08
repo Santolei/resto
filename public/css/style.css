@@ -538,4 +538,7 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
 .sidebar-copyright {
   position: absolute;
   bottom: 0;
+  color: #000;
 }
+
+.contador-js {font-weight: bold;}

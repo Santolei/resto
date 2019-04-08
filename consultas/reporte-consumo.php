@@ -3,11 +3,10 @@
 // --- Archivos de configuración y conexión a la Base de datos ---- //
 require '../config/conexion.php';
 
-if (isset($_POST['desde']) and isset($_POST['hasta'])) {
 	// DATOS DEL TIMEPICKER => reportes.view.php y reemplazo los / por - para que tome la fecha de la base de datos
-	$desde = $_POST['desde'];
+	$desde = $_GET['desde'];
 	$desde = str_replace("/", "-", $desde);
-	$hasta = $_POST['hasta'];
+	$hasta = $_GET['hasta'];
 	$hasta = str_replace("/", "-", $hasta);
 	// Ahora tengo que cambiar el formato de la fecha a la version inglesa
 	$dia_desde = substr($desde, -16, 2);
@@ -26,31 +25,19 @@ if (isset($_POST['desde']) and isset($_POST['hasta'])) {
 	$hasta = $anio_hasta . "-" . $mes_hasta . "-" . $dia_hasta . " " . $hora_hasta . ":00";
 
 	// --------------------------------- //
-	// TRAIGO LOS DATOS DE LAS VENTAS DE LAS FECHAS SELECCIONADAS 
+	// TRAIGO EL TOTAL DEL CONSUMO DE LAS FECHAS SELECCIONADAS
 	// --------------------------------- //
 
 	$statement = $con->prepare("
-		SELECT *
+		SELECT sum(consumo)
 		FROM ventas 
 		WHERE fecha 
 		BETWEEN '$desde'
 		AND '$hasta'
 	");
 	$statement->execute();
-	$ventas = $statement->fetchAll();
-	
-	foreach ($ventas as $venta) {
-		echo (
-			"<tr>
-			  <td scope='row'>" .  "<span class=' font-weight-bold fa-1-2x'>" . $venta['id_venta'] . "</span>". "</td>" . 
-			  "<td>" . $venta['fecha'] . "</td>" . 
-			  "<td>" . $venta['nro_mesa'] . "</td>" .
-			  "<td>" . "$" . $venta['consumo'] ."</td>" .
-			  "<td>" . "<a href='detalle_venta.php?id=".$venta['id_venta']. "'>Ver detalle</a>" ."</td>" .
-			"</tr>"
-		);
-	}
-}
-
+	$consumo = $statement->fetchAll();
+	$consumo = round($consumo[0][0], 2);
+	echo ("$" . $consumo);
 
  ?>
