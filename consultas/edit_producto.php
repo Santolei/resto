@@ -12,6 +12,7 @@ $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];
 $categoria = $_POST['categoria'];
 $stock = $_POST['stock'];
+$estado = $_POST['estado'];
 
 // --------------------------------- //
 // --------------------------------- //
@@ -25,7 +26,8 @@ if (!$con) {
 		SET nombre = '$nombre',
 			precio = '$precio',
 			categoria = '$categoria',
-			stock = '$stock'
+			stock = '$stock',
+			estado = '$estado'
 		WHERE id_producto = '$id_producto'
 		");
 

@@ -42,6 +42,16 @@
             <label for="stock">Stock:</label>
             <input class="form-control" type="number" name="stock" id="stock" value="<?php echo $producto['stock']; ?>" autocomplete="off">
           </div>
+
+          <!-- Default checked -->
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" onclick="$(this).val(this.checked ? 1 : 0)" value="1" name="estado" class="custom-control-input" id="defaultChecked2" <?php if ($producto['estado'] == '1'): ?>
+              checked
+            <?php else: ?>
+              
+            <?php endif ?> >
+            <label class="custom-control-label" for="defaultChecked2">Mostrar en el menú</label>
+          </div>
           <!--Footer-->
         <div class="modal-footer justify-content-center">
           <button type="submit" class="btn info-color white-text">Guardar</button>

@@ -20,9 +20,9 @@ if (!$con) {
 		DELETE FROM productos
 		WHERE id_producto = '$id_producto'
 		LIMIT 1
-		");
+	");
 
 	$statement->execute();
-	header("Location: ../inventario.php");
+	header("Location: ../index?view=inventario");
 }		
 ?>

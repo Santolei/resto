@@ -43,6 +43,13 @@
 										<p><strong>Precio:</strong> <?php echo $producto['precio']; ?></p>
 										<p><strong>Categoría:</strong> <?php echo $producto['categoria']; ?></p>
 										<p><strong>Stock:</strong> <?php echo $producto['stock']; ?></p>
+                                        <p><strong>Se muestra en el menú:</strong> 
+                                            <?php if ($producto['estado'] == '1'): ?>
+                                            Si
+                                            <?php else: ?>
+                                            No
+                                            <?php endif ?>
+                                        </p>
 									</div>
 
                                 	<div class="d-flex justify-content-between align-items-center">
