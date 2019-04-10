@@ -101,6 +101,7 @@
                             <a class="btn btn-primary" data-toggle="collapse" href="#collapse-ventas" aria-expanded="false" aria-controls="collapse-ventas" style="width: 200px">
                              Últimas ventas <div class="fa fa-angle-down"></div>
                             </a>
+                            <a href="reportes" class="btn btn-primary">Reportes<i class="ml-2 fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

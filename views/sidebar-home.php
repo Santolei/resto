@@ -6,7 +6,7 @@
  ?>
 
 <div class="sidebar-fixed position-fixed animated white-text">
-    <a class="logo-wrapper waves-effect" href="index.php">
+    <a class="logo-wrapper waves-effect" href="index">
         <img src="<?php echo $logo ?>" class="img-fluid" alt="">
     </a>
 
@@ -70,7 +70,7 @@
             </section>
 
             <script>// Set the date we're counting down to
-            var countDownDate = new Date("May 9, 2019 09:00:00").getTime();
+            var countDownDate = new Date("May 10, 2019 09:00:00").getTime();
 
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -94,7 +94,7 @@
               // If the count down is finished, write some text 
               if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRADO";
+                document.getElementById("demo").innerHTML = "Licencia Vencida - Contacte al soporte";
               }
             }, 1000);</script>
              © <?php echo date('Y'); ?> Desarrollo:

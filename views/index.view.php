@@ -67,7 +67,7 @@
 
                                 <div class="d-flex flex-column flex-sm-row justify-content-center mb-4">
                                     <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_producto">Agregar producto</a>
-                                    <a class="btn btn-primary" href="categorias.php">Categorías</a>
+                                    <a class="btn btn-primary" href="categorias">Categorías</a>
                                 </div>
                                 <div class="table-responsive">
                                     <table style="width: 100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_productos">
@@ -173,7 +173,7 @@
                                             <a class="btn btn-primary" data-toggle="collapse" href="#collapse-ventas" aria-expanded="false" aria-controls="collapse-ventas" style="width: 200px">
                                              Últimas ventas <div class="fa fa-angle-down"></div>
                                             </a>
-                                            <a href="reportes.php" class="btn btn-primary">Reportes<i class="ml-2 fa fa-angle-right"></i></a>
+                                            <a href="reportes" class="btn btn-primary">Reportes<i class="ml-2 fa fa-angle-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -408,6 +408,7 @@
             </div>
         </div>
         <?php include 'modals/modal_backup.php' ?>
+        <?php include 'modals/modal_lic.php' ?>
         
     </main>
     

@@ -39,12 +39,12 @@
 
     <!-- TABS -->
     <script type="text/javascript">
-        var home = "http://192.168.0.20<?php echo RUTA?>index.php?view=home";
-        var inventario = "http://192.168.0.20<?php echo RUTA?>index.php?view=inventario";
-        var caja = "http://192.168.0.20<?php echo RUTA?>index.php?view=caja";
-        var usuarios = "http://192.168.0.20<?php echo RUTA?>index.php?view=usuarios";
-        var pedidos = "http://192.168.0.20<?php echo RUTA?>index.php?view=pedidos";
-        var configuracion = "http://192.168.0.20<?php echo RUTA?>index.php?view=configuracion";
+        var home = "http://192.168.0.20<?php echo RUTA?>index?view=home";
+        var inventario = "http://192.168.0.20<?php echo RUTA?>index?view=inventario";
+        var caja = "http://192.168.0.20<?php echo RUTA?>index?view=caja";
+        var usuarios = "http://192.168.0.20<?php echo RUTA?>index?view=usuarios";
+        var pedidos = "http://192.168.0.20<?php echo RUTA?>index?view=pedidos";
+        var configuracion = "http://192.168.0.20<?php echo RUTA?>index?view=configuracion";
 
         if (window.location == home){
          $('#home').addClass('active show');
@@ -89,6 +89,17 @@
     $(document).ready(function()
     {
       $("#modalBackup").modal("show");
+    });
+    </script>
+    <?php endif; ?>
+
+    <!-- Esto viene de inc/sessions.php -->
+    <?php if($exibirModalLic === true) : ?>
+    <script>
+    $(document).ready(function()
+    {
+      $("#modalLic").modal("show");
+      $('.modal-backdrop.show').addClass('oscurecido');
     });
     </script>
     <?php endif; ?>
@@ -161,7 +172,7 @@
                 success: function(){
                     $('.modal_delete_user').modal('hide');
                     alert("Usuario Borrado correctamente");
-                    console.log('usuario borrado');
+                    location.reload();
                 }
             });
         }); 

@@ -4,6 +4,11 @@
 	// --- Archivos de configuración y conexión a la Base de datos ---- //
 	require 'config/conexion.php';
 
+	// Traigo los datos de la tabla perfil, donde figuran los datos 
+	// del negocio del usuario
+
+	require 'consultas/perfil.php';
+
 	// --------------------------------- //
 	// --------------------------------- //
 

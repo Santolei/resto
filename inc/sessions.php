@@ -6,6 +6,22 @@ ini_set("session.gc_maxlifetime","36000");
 session_start();
 $_SESSION['rdrurl'] = $_SERVER['REQUEST_URI'];
 
+// Licencia
+// ------- Timezone -------- //
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+$exibirModalLic = false;
+$fecha_actual = date("d-m-Y H:i:00");
+$fecha_final = "10-05-2019 09:00:00";
+	
+if($fecha_actual >= $fecha_final){
+	// Licencia Vencida
+		$exibirModalLic = true;
+}
+else{
+	// Licencia Vigente
+	$exibirModalLic = false;
+}
+
 if (!isset($_SESSION['usuario'])) {
 	header('Location: login.php');
 } else{

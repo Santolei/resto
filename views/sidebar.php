@@ -7,7 +7,7 @@
  ?>
 
 <div class="sidebar-fixed position-fixed animated white-text">
-    <a class="logo-wrapper waves-effect" href="index.php">
+    <a class="logo-wrapper waves-effect" href="index">
         <img src="<?php echo $logo ?>" class="img-fluid" alt="">
     </a>
 
@@ -15,7 +15,7 @@
         <!-- PRUEBA DE MENU -->
         <ul class=" list-group list-group-flush" id="myTab" role="tablist">
             <li class="nav-item p-0">
-                <a class="nav-link list-group-item list-group-item-action waves-effect active  m-0" id="home-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=home" role="tab" aria-controls="home"
+                <a class="nav-link list-group-item list-group-item-action waves-effect active  m-0" id="home-tab" href="http://192.168.0.20<?php echo RUTA?>index?view=home" role="tab" aria-controls="home"
                   aria-selected="true"><i class="fa fa-pie-chart mr-3"></i>Mesas</a>
             </li>
 
@@ -23,7 +23,7 @@
             <?php if ($usuario_logueado['rol'] != 1): ?>
             <?php else: ?>
                 <li class="nav-item p-0">
-                    <a class="nav-link list-group-item list-group-item-action waves-effect m-0" id="inventario-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=inventario" role="tab" aria-controls="inventario"
+                    <a class="nav-link list-group-item list-group-item-action waves-effect m-0" id="inventario-tab" href="http://192.168.0.20<?php echo RUTA?>index?view=inventario" role="tab" aria-controls="inventario"
                       aria-selected="false"><i class="fa fa-table mr-3"></i>Inventario</a>
                 </li>
             <?php endif ?>
@@ -32,7 +32,7 @@
                 
             <?php else: ?>
                 <li class="nav-item p-0">
-                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="caja-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=caja" role="tab" aria-controls="caja"
+                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="caja-tab" href="http://192.168.0.20<?php echo RUTA?>index?view=caja" role="tab" aria-controls="caja"
                       aria-selected="false"><i class="fa fa-money mr-3"></i>Caja</a>
                 </li>
             <?php endif ?>
@@ -40,21 +40,21 @@
             <?php if ($usuario_logueado['rol'] != 1): ?> 
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="usuarios-tab"  href="http://192.168.0.20<?php echo RUTA?>index.php?view=usuarios" role="tab" aria-controls="usuarios"
+                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="usuarios-tab"  href="http://192.168.0.20<?php echo RUTA?>index?view=usuarios" role="tab" aria-controls="usuarios"
                       aria-selected="false"><i class="fa fa-user mr-3"></i>Usuarios</a>
                 </li>
             <?php endif ?>      
             
             
             <li class="nav-item">
-                <a class="nav-link list-group-item list-group-item-action waves-effect" id="pedidos-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=pedidos" role="tab" aria-controls="pedidos"
+                <a class="nav-link list-group-item list-group-item-action waves-effect" id="pedidos-tab" href="http://192.168.0.20<?php echo RUTA?>index?view=pedidos" role="tab" aria-controls="pedidos"
                   aria-selected="false"><i class="fa fa-pencil mr-3"></i>Pedidos</a>
             </li>
 
             <?php if ($usuario_logueado['rol'] != 1): ?> 
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="configuracion-tab" href="http://192.168.0.20<?php echo RUTA?>index.php?view=configuracion" role="tab" aria-controls="configuracion"
+                    <a class="nav-link list-group-item list-group-item-action waves-effect" id="configuracion-tab" href="http://192.168.0.20<?php echo RUTA?>index?view=configuracion" role="tab" aria-controls="configuracion"
                       aria-selected="false"><i class="fa fa-cog mr-3"></i>Configuración</a>
                 </li>
             <?php endif ?>  

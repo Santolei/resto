@@ -27,5 +27,5 @@ if (!$con) {
 			$statement2->execute();
 }
 
-	header("Location: ../pedidos.php");
+	header("Location: ../index?view=pedidos");
 ?>

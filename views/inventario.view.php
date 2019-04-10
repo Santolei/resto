@@ -35,7 +35,7 @@
 
                             <div class="d-flex flex-column flex-sm-row justify-content-center mb-4">
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#modal_add_producto">Agregar producto</a>
-                                <a class="btn btn-primary" href="categorias.php">Categorías</a>
+                                <a class="btn btn-primary" href="categorias">Categorías</a>
                             </div>
                             <table style="width:100%; border-radius: 6px" class="display table table-striped table-sm" id="tabla_productos">
                                 <thead class="tabla-thead white-text">
