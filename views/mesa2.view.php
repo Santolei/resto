@@ -115,7 +115,7 @@
                                     <span>Pedido Mesa <?php echo $nro_mesa ?></span>
                                 </h5>
                                 <h5 class="mb-2 mb-sm-0 pt-1">
-                                    <span><i class="fa fa-clock-o"></i> <?php echo($time); ?>hs</span>
+                                    <span class="invisible"><i class="fa fa-clock-o"></i> <?php echo($time); ?>hs</span>
                                 </h5>
                             </div>
 

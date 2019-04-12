@@ -38,7 +38,7 @@
               <?php endforeach ?>
             </select>
           </div>
-          <div class="form-group">
+          <div class="form-group hidden">
             <label for="stock">Stock:</label>
             <input class="form-control" type="number" name="stock" id="stock" value="<?php echo $producto['stock']; ?>" autocomplete="off">
           </div>

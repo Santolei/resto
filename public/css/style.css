@@ -398,6 +398,10 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
 
 }
 
+.sorting:hover {
+  cursor: pointer;
+}
+
 /* LOGIN */
 
 /*LOGIN*/

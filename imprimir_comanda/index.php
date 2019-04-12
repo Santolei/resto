@@ -82,8 +82,9 @@ try{
 	Ahora vamos a imprimir un encabezado
 */
 $printer->text("\n");
-$printer->text("Mozo:" . "       " . $pedido[0]['mozo'] . "\n");
-$printer->text("Mesa " . $nro_mesa . ":         " . "Ingreso: " . $time . "hs" . "\n");
+$printer->setJustification(Printer::JUSTIFY_LEFT);
+$printer->text("Mozo: " . $pedidos[0]['mozo'] . "\n");
+$printer->text("Mesa " . $nro_mesa . ":        " . "Ingreso: " . $time . "hs" . "\n");
 $printer->setJustification(Printer::JUSTIFY_LEFT);
 $printer->setUnderline(Printer::UNDERLINE_DOUBLE);
 $printer->text("Cantidad/Producto" . "\n");

@@ -11,6 +11,8 @@
 	// ------- Ruta principal -------- //
 
 	define('RUTA', '/resto/');
+	// ------- Ip del router -------- //
+	define('IP','http://192.168.1.89');
 
 
 

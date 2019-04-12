@@ -18,9 +18,15 @@
       <div class="modal-body">
         <?php require 'consultas/productos_por_categoria.php' ?>
         <div class="d-flex flex-wrap justify-content-center">
-          <?php foreach ($productos_por_cat as $producto): ?>
+          <!-- Si hay productos los muestro: -->
+          <?php if ($productos_por_cat): ?>
+            <?php foreach ($productos_por_cat as $producto): ?>
           <a data-dismiss="modal" name="producto_modal" data-producto="<?php echo $producto['nombre']; ?>" data-precio="<?php echo $producto['precio']; ?>" data-id="<?php echo $producto['id_producto']; ?>" data-categoria="<?php echo $producto['categoria']; ?>" class="btn blue darken-2 white-text btn-productos-menu"><?php echo $producto['nombre']; ?></a>
-        <?php endforeach ?>
+            <?php endforeach ?>
+          <?php else: ?>
+            <h4 class="text-center lead">No hay productos registrados en esa categoría</h4 class="text-center titulo">
+          <?php endif ?>
+          
         </div>
         
       </div>

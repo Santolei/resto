@@ -34,7 +34,7 @@
             </select>
             <!-- <input class="form-control" type="text" name="categoria" id="categoria" autocomplete="off"> -->
           </div>
-          <div class="form-group">
+          <div class="form-group hidden">
             <label for="stock">Stock:</label>
             <input class="form-control" type="number" name="stock" id="stock" autocomplete="off">
           </div>

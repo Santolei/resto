@@ -10,8 +10,8 @@ $_SESSION['rdrurl'] = $_SERVER['REQUEST_URI'];
 // ------- Timezone -------- //
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 $exibirModalLic = false;
-$fecha_actual = date("d-m-Y H:i:00");
-$fecha_final = "10-05-2019 09:00:00";
+$fecha_actual = strtotime(date("d-m-Y H:i:00"));
+$fecha_final = strtotime("12-05-2019 09:16:00");
 	
 if($fecha_actual >= $fecha_final){
 	// Licencia Vencida
@@ -23,7 +23,7 @@ else{
 }
 
 if (!isset($_SESSION['usuario'])) {
-	header('Location: login.php');
+	header('Location: login');
 } else{
 	$usuario_login = $_SESSION['usuario'];
 
