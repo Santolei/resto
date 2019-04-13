@@ -32,7 +32,7 @@
         $('input[name="precio"]').val($(this).attr('data-precio'));
         $('input[name="id_producto"]').val($(this).attr('data-id'));
         $('#form-add-productos').trigger('submit');
-        $('#mostrar').hide();
+        $('#mostrar').html("<div class='m-0 animated slower delay-2s fadeOut'>Producto agregado</div>");
     });
 
         $(".btn-productos-menu").on('click', function () {
