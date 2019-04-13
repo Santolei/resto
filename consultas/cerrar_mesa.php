@@ -1,7 +1,7 @@
 <?php 
 // --- Archivos de configuración y conexión a la Base de datos ---- //
 
-	require '../config/config.php';
+	// require '../config/config.php';
 	require '../config/conexion.php';
 	require '../config/funciones.php';
 
@@ -36,6 +36,8 @@
 
 	$total_con_descuento = ($subtotal_mesa - $subtotal);
 
+
+
 	// --------------------------------- //
 	// Traigo los productos consumidos
 	// --------------------------------- //
@@ -48,6 +50,15 @@
 	$productos_consumidos = $prod_consumidos->fetchAll();
 	foreach ($productos_consumidos as $producto_consumido) {
 		$nombreprod .= $producto_consumido['producto'] . ' x ' . $producto_consumido['cantidad'] . '<br>';
+		$cantidad_consumida = $producto_consumido['cantidad'];
+		$id = $producto_consumido['id_producto'];
+		$statement = $con->prepare("
+	 		UPDATE productos
+	 		SET stock = stock - $cantidad_consumida
+	 		WHERE id_producto = $id 
+ 		");
+		$statement->execute();
+
 	}
 
 	/*
