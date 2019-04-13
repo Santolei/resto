@@ -49,7 +49,7 @@
 
                                   <div class="d-flex flex-column flex-lg-row flex-wrap mb-3">
                                         <?php foreach ($lista_categorias as $categoria): ?>
-                                          <a class="btn btn-primary btn-categorias" data-toggle="modal" data-target="#productos_por_cat_<?php echo $categoria['nombre']; ?>"><?php echo $categoria['nombre'] ?></a>
+                                          <a class="btn btn-primary btn-categorias" data-toggle="modal" data-target="#productos_por_cat_<?php echo str_replace(" ", "_", $categoria['nombre']); ?>"><?php echo $categoria['nombre'] ?></a>
                                           <?php include 'modals/modal_productos_por_cat.php' ?>
                                         <?php endforeach ?>
                                   </div>

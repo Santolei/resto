@@ -1,6 +1,6 @@
 
 <!-- Modal de agregar producto -->
-<div class="modal fade" id="productos_por_cat_<?php echo $categoria['nombre']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="productos_por_cat_<?php echo str_replace(" ", "_", $categoria['nombre']); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-notify" role="document">
     <!--Content-->
