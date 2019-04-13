@@ -23,7 +23,7 @@
           </div>
           <div class="form-group">
             <label for="precio">Precio:</label>
-            <input class="form-control" type="text" name="precio" id="precio" value="<?php echo $producto['precio']; ?>" autocomplete="off">
+            <input class="form-control" type="number" name="precio" id="precio" value="<?php echo $producto['precio']; ?>" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="categoria">Categoría:</label>
@@ -38,7 +38,7 @@
               <?php endforeach ?>
             </select>
           </div>
-          <div class="form-group hidden">
+          <div class="form-group">
             <label for="stock">Stock:</label>
             <input class="form-control" type="number" name="stock" id="stock" value="<?php echo $producto['stock']; ?>" autocomplete="off">
           </div>

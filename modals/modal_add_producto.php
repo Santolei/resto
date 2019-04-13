@@ -22,7 +22,7 @@
           </div>
           <div class="form-group">
             <label for="precio">Precio:</label>
-            <input class="form-control" type="text" name="precio" id="precio" autocomplete="off">
+            <input class="form-control" type="number" name="precio" id="precio" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="categoria">Categoría:</label>
@@ -34,7 +34,7 @@
             </select>
             <!-- <input class="form-control" type="text" name="categoria" id="categoria" autocomplete="off"> -->
           </div>
-          <div class="form-group hidden">
+          <div class="form-group">
             <label for="stock">Stock:</label>
             <input class="form-control" type="number" name="stock" id="stock" autocomplete="off">
           </div>

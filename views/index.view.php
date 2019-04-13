@@ -46,7 +46,7 @@
                                          
                                     <?php foreach ($mesas as $mesa): ?>
                                         <!-- Mesa -->
-                                        <a data-toggle="modal" data-target="#modalMesa<?php echo $mesa['nro_mesa']?>" class="mesa col-12 col-sm-6 col-lg-3 m-2 waves-effect d-flex justify-content-center align-items-center <?php if ($mesa['estado'] == "Disponible"): ?>
+                                        <a data-toggle="modal" data-target="#modalMesa<?php echo $mesa['nro_mesa']?>" class="mesa col-12 col-sm-6 col-lg-3 m-2 d-flex justify-content-center align-items-center <?php if ($mesa['estado'] == "Disponible"): ?>
                                                     badge-success
                                                 <?php else: ?>
                                                     badge-danger
