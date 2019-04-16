@@ -31,6 +31,13 @@
     <script>
         $(document).ready(function () {
 
+        // Deshabilito el doble click en todos lados 
+            $(document).ready(function(){
+              $("*").dblclick(function(e){
+                e.preventDefault();
+              });   
+            }); 
+
           $('#button-collapse-sidebar').on('click', function(){
             var sidebar = $('.sidebar-fixed');
             var main = $('#main');
