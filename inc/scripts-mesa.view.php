@@ -189,6 +189,29 @@
                     type:  'post'
             });  
         });
+
+        // Imprimir comanda individual
+
+        // $('.imp-individual').on('click',function(){
+        //     var producto = $(this).attr('data-producto');
+        //     var cantidad = $(this).attr('data-cantidad');
+        //         console.log(producto);
+        //         console.log(cantidad);
+        // });
     });
+
+    
+
+    function impComandaInd(){
+        
+        // $.ajax({
+        //     url:  "imprimir_comanda_ind/index.php?producto=" + producto +"&cantidad=" + cantidad, 
+        //     type:  'GET',
+        //     success: function(){
+        //         console.log('funciona');
+        //     }
+        // });
+       console.log($('.imp-individual').attr('data-producto'));
+    }
 
     </script>
